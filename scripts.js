@@ -15,7 +15,8 @@ function renderLives(list) {
     const card = document.createElement("div");
     card.classList.add("live-card");
 
-    card.innerHTML = `
+card.innerHTML = `
+      <div class="live-band">${live.band}</div>
       <div class="live-date">${live.date}</div>
       <div class="live-title">${live.title}</div>
       <div class="live-venue">${live.venue}</div>
