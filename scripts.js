@@ -16,8 +16,8 @@ function renderLives(list) {
     card.classList.add("live-card");
 
 card.innerHTML = `
+<div class="live-date">${live.date}</div>
       <div class="live-band">${live.band}</div>
-      <div class="live-date">${live.date}</div>
       <div class="live-title">${live.title}</div>
       <div class="live-venue">${live.venue}</div>
       <div class="live-time">${live.time}</div>
