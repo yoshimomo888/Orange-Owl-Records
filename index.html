@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(仮)ライブスケジュール</title>
+  <!-- <link rel="icon" href=""> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="base.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <script src="scripts.js" defer></script> <!-- 外部JavaScriptファイルを読み込む -->
+</head>
+
+<body>
+    <header>
+        <h1>(仮)ライブスケジュール</h1>
+    </header>
+ <main>
+
+    <!-- 検索UI -->
+    <section class="search-area">
+
+      <div class="search-item">
+        <label for="search-band">バンド名</label>
+        <select id="search-band">
+          <option value="">選択してください</option>
+          <option value="tetora">TETORA</option>
+          <option value="ammo">ammo</option>
+          <option value="arustake">アルステイク</option>
+        </select>
+      </div>
+
+      <div class="search-item">
+        <label for="search-pref">都道府県</label>
+        <select id="search-pref">
+          <option value="">選択してください</option>
+          <option value="東京">東京</option>
+          <option value="大阪">大阪</option>
+          <option value="福岡">福岡</option>
+        </select>
+      </div>
+
+    </section>
+
+    <!-- ライブ一覧 -->
+<section class="live-list">
+  <!-- JSでカードが入る -->
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Live Schedule</p>
+  </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+/* 全体の基本設定 */
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f7f7f7;
+  color: #333;
+}
+
+/* ヘッダー */
+header {
+  background: #888;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* 検索エリア */
+.search-area {
+  background: white;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.search-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+}
+
+.search-item label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.search-item select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ライブ一覧 */
+.live-list {
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+/* ライブカード */
+.live-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.live-date {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.live-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.live-venue,
+.live-time,
+.live-ticket {
+  margin-bottom: 5px;
+}
+
+.live-detail-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #888;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.live-detail-link:hover {
+  text-decoration: underline;
+}
+
+/* フッター */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-size: 14px;
+}
