@@ -1,109 +1,171 @@
-/* 全体の基本設定 */
-body {
-  font-family: 'Noto Sans JP', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f7f7f7;
-  color: #333;
-}
-
-/* ヘッダー */
-header {
-  background: #888;
-  padding: 20px;
+/* ロゴエリア全体 */
+.logo-area {
+  padding: 20px 16px;
   text-align: center;
-  color: white;
+  background: #fff;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 700;
+/* 事務所ロゴ（中央） */
+.logo-area .agency img {
+  width: 140px;
+  margin-bottom: 20px;
 }
 
-/* 検索エリア */
-.search-area {
-  background: white;
-  padding: 20px;
+/* バンドロゴの並び */
+.logo-area .bands {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* 実ロゴ（TETORA） */
+.band-logo {
+  width: 100px;
+  height: auto;
+}
+
+/* 仮ロゴ枠 */
+.logo-frame {
+  width: 100px;
+  height: 50px;
+  background: #ddd;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #666;
+}
+
+
+
+
+/* 検索エリア全体 */
+.search-section {
+  background: #fff;
+  padding: 20px 16px;
   border-bottom: 1px solid #ddd;
 }
 
-.search-item {
-  display: flex;
-  flex-direction: column;
-  min-width: 150px;
-}
-
-.search-item label {
-  font-size: 14px;
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
-.search-item select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* ライブ一覧 */
-.live-list {
-  padding: 20px;
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-/* ライブカード */
-.live-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.live-date {
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.live-title {
+/* 見出し */
+.search-section h1 {
   font-size: 18px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
-.live-venue,
-.live-time,
-.live-ticket {
-  margin-bottom: 5px;
+/* 検索ボックス */
+.search-box input[type="search"] {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
 }
 
-.live-detail-link {
-  display: inline-block;
-  margin-top: 10px;
-  color: #888;
-  text-decoration: none;
-  font-weight: 500;
+/* サジェスト（予測変換） */
+.suggest-list {
+  margin-top: 8px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  display: none; /* JSで表示切り替え */
 }
 
-.live-detail-link:hover {
-  text-decoration: underline;
+.suggest-list div {
+  padding: 10px 12px;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
 }
 
-.live-band {
-  font-size: 1.2rem;
-  font-weight: bold;
+.suggest-list div:last-child {
+  border-bottom: none;
+}
+
+/* 都道府県チップ */
+.pref-chips {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+}
+
+.chip {
+  padding: 6px 14px;
+  background: #eee;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: #ddd;
+}
+
+
+
+
+/* ライブカードの外枠 */
+.live-card {
+  display: flex;
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  gap: 16px;
+}
+
+/* 左側：日付ブロック */
+.live-date {
+  width: 60px;
+  text-align: center;
+  font-weight: 700;
+  color: #333;
+}
+
+.live-date .md {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+.live-date .dow {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #666;
+}
+
+/* 右側：本文ブロック */
+.live-body {
+  flex: 1;
+}
+
+.live-body .band {
+  font-size: 16px;
+  font-weight: 700;
   margin-bottom: 4px;
 }
 
-/* フッター */
-.site-footer {
-  text-align: center;
-  padding: 20px;
-  color: #666;
+.live-body .title {
   font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.live-body .place,
+.live-body .time {
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 2px;
+}
+
+.live-body .link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: #007bff;
+  text-decoration: underline;
 }
