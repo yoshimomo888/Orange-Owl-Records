@@ -81,6 +81,24 @@ body {
   outline: none;
 }
 
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#search-input {
+  padding-left: 40px;
+  /* アイコン分の余白 */
+}
+
 /* サジェスト（予測変換） */
 .suggest-list {
   margin-top: 8px;
