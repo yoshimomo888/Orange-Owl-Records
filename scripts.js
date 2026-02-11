@@ -22,7 +22,7 @@ const prefectures = [
   { name: "石川", yomi: "いしかわ" },
   { name: "福井", yomi: "ふくい" },
   { name: "山梨", yomi: "やまなし" },
-  { name: "長野", yomi: "ながの" }Z,
+  { name: "長野", yomi: "ながの" },
   { name: "岐阜", yomi: "ぎふ" },
   { name: "静岡", yomi: "しずおか" },
   { name: "愛知", yomi: "あいち" },
