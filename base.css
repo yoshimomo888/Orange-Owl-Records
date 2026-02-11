@@ -1,3 +1,7 @@
+body {
+  font-family: "LINE Seed JP", sans-serif;
+}
+
 /* ロゴエリア全体 */
 .logo-area {
   padding: 20px 16px;
@@ -21,10 +25,11 @@
 
 /* 実ロゴ（TETORA） */
 .band-logo {
-  width: 100px;
-  height: auto;
+  height: 40px;
+  object-fit: contain;
+  display: block;
+  margin-right: 10px;
 }
-
 /* 仮ロゴ枠 */
 .logo-frame {
   width: 100px;
@@ -38,6 +43,16 @@
   color: #666;
 }
 
+.band-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  transform: scale(1.35);
+  /* ← 中身だけ拡大 */
+  transform-origin: center;
+  /* ← 中央基準で拡大 */
+}
 
 
 
@@ -104,7 +119,10 @@
   background: #ddd;
 }
 
-
+.live-list {
+  display: block;
+  /* flex をやめる */
+}
 
 
 /* ライブカードの外枠 */
@@ -114,29 +132,124 @@
   border-radius: 10px;
   padding: 16px;
   margin-bottom: 16px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
   gap: 16px;
 }
 
-/* 左側：日付ブロック */
-.live-date {
-  width: 60px;
+/* 左側：日付ブロック（参考サイト風） */
+.live-date-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  /* 太めの柱 */
+  padding: 12px 0;
+  /* 縦に余白 */
+}
+
+/* 日付（2 1） */
+.day-dow .md {
+  font-size: 32px;
+  /* 主役級 */
+  font-weight: 700;
+  line-height: 1.0;
+  position: relative;
+  display: inline-block;
+  padding: 0 6px;
+  /* 線の左右余白 */
+}
+
+/* 日付の縦線 */
+.day-dow .md {
+  position: relative;
+  width: 50px;   /* ← ここを小さくする */
+  height: 50px;  /* ← ここも同じ値にする */
+  display: block;
+  font-size: 0;
+}
+
+/* 左上の数字（例：2） */
+.day-dow .md::before {
+  content: attr(data-left);
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+/* 右下の数字（例：1） */
+.day-dow .md::after {
+  content: attr(data-right);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.day-dow .md::before,
+.day-dow .md::after {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+  width: 28px;
   text-align: center;
-  font-weight: 700;
-  color: #333;
+  display: inline-block;
 }
 
-.live-date .md {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.2;
+.md::before,
+.md::after,
+.dow {
+  font-family: "Inter", sans-serif;
 }
 
+/* 対角線（45°） */
+.day-dow .md .slash {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 70px;
+  /* 長めにして正方形を突き抜ける */
+  background: #222;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
 
-.live-date .dow {
-  font-size: 12px;
-  margin-top: 4px;
-  color: #666;
+/* 曜日（SAT） */
+
+
+.day-dow {
+  position: relative;
+  /* ← 曜日をこの中で動かせるようにする */
+}
+
+.day-dow .dow {
+  position: absolute;
+  bottom: -30px;
+  /* ← 正方形のすぐ下に寄せる */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #555;
+}
+
+.dow {
+  color: #555;
+  /* デフォルト（平日） */
+}
+
+/* 日曜：薄い赤 */
+.dow.sun {
+  color: #d66;
+}
+
+/* 土曜：薄い青 */
+.dow.sat {
+  color: #4a7bd1;
 }
 
 /* 右側：本文ブロック */
@@ -146,7 +259,9 @@
 
 .live-body .band {
   font-size: 16px;
-  font-weight: 700;
+  /* 少し大きめ */
+  font-weight: 500;
+  /* 太字ではない */
   margin-bottom: 4px;
 }
 
@@ -155,7 +270,12 @@
   margin-bottom: 4px;
 }
 
-.live-body .place,
+.live-body .place {
+  font-size: 18px;
+  /* 少し大きめ */
+  margin-bottom: 4px;
+}
+
 .live-body .time {
   font-size: 13px;
   color: #555;
@@ -168,4 +288,31 @@
   font-size: 13px;
   color: #007bff;
   text-decoration: underline;
+}
+
+/* 月帯（02 2026） */
+.month-header {
+  font-size: 40px;
+  font-weight: 500;
+  padding-left: 30px;
+  letter-spacing: 1px;
+  align-items: flex-end;
+  margin: 60px 0 14px;
+}
+
+.month-header {
+  display: flex;
+  gap: 6px;
+}
+
+.month-header::first-letter {
+  /* これは月の最初の文字なので触らない */
+}
+
+.month-header span.year {
+  font-size: 20px;
+  /* ← 年だけ小さく */
+  font-weight: 500;
+  padding-left: 20px;
+
 }

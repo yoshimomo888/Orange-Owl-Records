@@ -5,12 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>(仮)ライブスケジュール</title>
-  <!-- <link rel="icon" href=""> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-  <link rel="stylesheet" href="base.css">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <script src="scripts.js" defer></script> <!-- 外部JavaScriptファイルを読み込む -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- ★ ここに追加（CSSより前） -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="base.css">
+
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
@@ -20,25 +24,27 @@
   <div class="agency">
     <img src="img/OrengeOwl_logo.png" alt="Orange Owl Records">
   </div>
-
+  
   <!-- 所属バンドロゴ（周囲） -->
   <div class="bands">
-
+  
     <!-- 実ロゴ：TETORA -->
-    <img src="img/TETORA_logo.png" alt="TETORA" class="band-logo">
-
+    <div class="band-logo" data-band="TETORA">
+      <img src="img/TETORA_logo.png" alt="TETORA">
+    </div>
+  
     <!-- 仮ロゴ：アルステイク -->
-    <div class="logo-frame">アルステイク</div>
-
+    <div class="logo-frame" data-band="アルステイク">アルステイク</div>
+  
     <!-- 仮ロゴ：マタノシタシティー -->
-    <div class="logo-frame">マタノシタシティー</div>
-
+    <div class="logo-frame" data-band="マタノシタシティー">マタノシタシティー</div>
+  
     <!-- 仮ロゴ：ammo -->
-    <div class="logo-frame">ammo</div>
-
+    <div class="logo-frame" data-band="ammo">ammo</div>
+  
     <!-- 仮ロゴ：東京、君がいない街 -->
-    <div class="logo-frame">東京、君がいない街</div>
-
+    <div class="logo-frame" data-band="東京、君がいない街">東京、君がいない街</div>
+  
   </div>
 
 </header>

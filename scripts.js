@@ -1,5 +1,5 @@
 // ------------------------------
-// 都道府県データ（最初に置く）
+// 都道府県データ
 // ------------------------------
 const prefectures = [
   { name: "北海道", yomi: "ほっかいどう" },
@@ -53,64 +53,192 @@ const prefectures = [
 
 const dowList = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 
-let liveData = [];
-
-fetch("/data/live.json")
-  .then(res => res.json())
-  .then(data => {
-    liveData = data;
-    renderCards(liveData);
-  })
-  .catch(err => console.error("JSON読み込みエラー:", err));
-
-
-
 // ------------------------------
-// サジェスト用の単語
+// データ本体
 // ------------------------------
-const suggestWords = [
-  ...liveData.map(item => item.band),
-  ...prefectures.map(p => p.name) // ← 漢字だけ
+const liveData = [
+  {
+    "date": "2026/02/01",
+    "title": "HITORIJIME CLUB TOUR OKAWARI TIME",
+    "place": "宮崎FLOOR",
+    "time": "OPEN 16:15 / START 17:00",
+    "ticket": "前売り ¥3900",
+    "band": "TETORA",
+    "pref": "宮崎"
+  },
+  {
+    "date": "2026/02/07",
+    "title": "THE NINTH APOLLO pre “15曲勝負 2マン”",
+    "place": "福岡Queblick",
+    "time": "OPEN 17:15 / START 18:00",
+    "ticket": "前売り ¥3500",
+    "band": "TETORA",
+    "pref": "福岡"
+  },
+  {
+    "date": "2026/02/13",
+    "title": "TETORA pre “ゲリラワンマン for the future”",
+    "place": "東京 渋谷O-Crest",
+    "time": "OPEN 17:45 / START 18:30",
+    "ticket": "前売り ¥3900",
+    "band": "TETORA",
+    "pref": "東京"
+  },
+  {
+    "date": "2026/02/21",
+    "title": "FOMARE OVER TOUR 25-26",
+    "place": "香川 高松DIME",
+    "time": "OPEN 17:30 / START 18:00",
+    "ticket": "前売り ¥4800",
+    "band": "TETORA",
+    "pref": "香川"
+  },
+  {
+    "date": "2026/02/22",
+    "title": "FOMARE OVER TOUR 25-26",
+    "place": "愛媛 松山WstudioRED",
+    "time": "OPEN 17:00 / START 18:00",
+    "ticket": "前売り ¥4800",
+    "band": "TETORA",
+    "pref": "愛媛"
+  },
+  {
+    "date": "2026/02/28",
+    "title": "THE NINTH APOLLO pre ハローミドルグラウン3",
+    "place": "Zepp DiverCity (TOKYO)",
+    "time": "OPEN 12:15 / START 13:00",
+    "ticket": "前売り ¥5000",
+    "band": "TETORA",
+    "pref": "東京"
+  },
+  {
+    "date": "2026/03/14",
+    "title": "TETORA × 灼けるなタウン クレイジー＆リアル ツアー 第3期",
+    "place": "沖縄 那覇 桜坂セントラル",
+    "time": "OPEN 12:30 / START 13:00",
+    "ticket": "前売り ¥3500",
+    "band": "TETORA",
+    "pref": "沖縄"
+  },
+  {
+    "date": "2026/03/20",
+    "title": "ツタロックフェス2026",
+    "place": "千葉県 幕張メッセ",
+    "time": "OPEN 9:00",
+    "ticket": "前売り ¥12000",
+    "band": "TETORA",
+    "pref": "千葉"
+  },
+  {
+    "date": "2026/03/24",
+    "title": "TETORA × 灼けるなタウン クレイジー＆リアル ツアー 第3期",
+    "place": "千葉LOOK",
+    "time": "OPEN 18:15 / START 19:00",
+    "ticket": "前売り ¥3900",
+    "band": "TETORA",
+    "pref": "千葉"
+  },
+  {
+    "date": "2026/05/10",
+    "title": "COMING KOBE26",
+    "place": "兵庫県 神戸メリケンパーク",
+    "time": "OPEN 9:00 / START 10:00",
+    "ticket": "無料（※各種チケットあり）",
+    "band": "TETORA",
+    "pref": "兵庫"
+  },
+  {
+    "date": "2026/05/30",
+    "title": "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
+    "place": "大阪府 海とのふれあい広場",
+    "time": "",
+    "ticket": "2日通し券 ¥28000",
+    "band": "TETORA",
+    "pref": "大阪"
+  },
+  {
+    "date": "2026/05/31",
+    "title": "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
+    "place": "大阪府 海とのふれあい広場",
+    "time": "",
+    "ticket": "2日通し券 ¥28000",
+    "band": "TETORA",
+    "pref": "大阪"
+  }
 ];
 
+// ------------------------------
+// 曜日
+// ------------------------------
+function getDow(dateStr) {
+  const date = new Date(dateStr);
+  return dowList[date.getDay()];
+}
 
+// ------------------------------
+// 日付（正方形＋斜線）
+// ------------------------------
+function formatDate(dateStr) {
+  const date = new Date(dateStr);
+  const m = date.getMonth() + 1;
+  const d = date.getDate();
+
+  return (
+    '<span class="md" data-left="' + m + '" data-right="' + d + '">' +
+      '<span class="slash"></span>' +
+    '</span>'
+  );
+}
 
 // ------------------------------
 // カード生成
 // ------------------------------
-function formatDate(dateStr) {
-  const date = new Date(dateStr);
-  return `${date.getMonth() + 1} / ${date.getDate()}`;
-}
-
 function createLiveCard(item) {
   return `
     <div class="live-card">
-      <div class="live-date">
-        <span class="md">${formatDate(item.date)}</span>
-        <span class="dow">${getDow(item.date)}</span>
+      <div class="live-date-block">
+        <div class="day-dow">
+          ${formatDate(item.date)}
+          <span class="dow ${getDow(item.date).toLowerCase()}">${getDow(item.date)}</span>
+        </div>
       </div>
+
       <div class="live-body">
         <p class="band">${item.band}</p>
         <p class="title">${item.title}</p>
         <p class="place">${item.place}</p>
         <p class="time">${item.time}</p>
-        <a class="link" href="${item.url}" target="_blank">詳細を見る</a>
       </div>
     </div>
   `;
 }
 
-function getDow(dateStr) {
-  const d = new Date(dateStr);
-  return dowList[d.getDay()];
-}
-
+// ------------------------------
+// カード描画
+// ------------------------------
 function renderCards(data) {
   const list = document.querySelector(".live-list");
   list.innerHTML = "";
-  data.forEach(item => list.innerHTML += createLiveCard(item));
+
+  let lastMonth = "";
+
+  data.forEach(item => {
+    const date = new Date(item.date);
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = date.getFullYear();
+    const monthYear = `${month} ${year}`;
+
+    if (monthYear !== lastMonth) {
+      list.innerHTML += `<div class="month-header"><span class="month">${month}</span> <span class="year">${year}</span></div>`;
+      lastMonth = monthYear;
+    }
+
+    list.innerHTML += createLiveCard(item);
+  });
 }
+
+// 初期表示
+renderCards(liveData);
 
 // ------------------------------
 // サジェスト
@@ -123,14 +251,9 @@ function showSuggest(keyword) {
     return;
   }
 
-  const lower = keyword.toLowerCase();
-
-  // ひらがなでも漢字でもヒットさせる
   const matched = prefectures
-    .filter(p =>
-      p.name.includes(keyword) || p.yomi.includes(keyword)
-    )
-    .map(p => p.name); // ← サジェストは漢字だけ
+    .filter(p => p.name.includes(keyword) || p.yomi.includes(keyword))
+    .map(p => p.name);
 
   if (matched.length === 0) {
     suggestList.style.display = "none";
@@ -144,8 +267,16 @@ function showSuggest(keyword) {
   suggestList.style.display = "block";
 }
 
+suggestList.addEventListener("click", (e) => {
+  if (e.target.classList.contains("suggest-item")) {
+    searchInput.value = e.target.textContent;
+    searchInput.dispatchEvent(new Event("input"));
+    suggestList.style.display = "none";
+  }
+});
+
 // ------------------------------
-// 検索イベント
+// 検索
 // ------------------------------
 const searchInput = document.getElementById("search-input");
 
@@ -159,9 +290,9 @@ searchInput.addEventListener("input", () => {
     const matchPlace = item.place.toLowerCase().includes(keyword);
     const matchTitle = item.title.toLowerCase().includes(keyword);
 
-    const matchPref = prefectures.some(p =>
-      p.name.includes(keyword) || p.yomi.includes(keyword)
-    );
+    const matchPref =
+      item.pref.includes(keyword) ||
+      prefectures.some(p => p.name === item.pref && p.yomi.includes(keyword));
 
     return matchBand || matchPlace || matchTitle || matchPref;
   });
@@ -172,10 +303,10 @@ searchInput.addEventListener("input", () => {
 // ------------------------------
 // ロゴ・チップ
 // ------------------------------
-const bandLogos = document.querySelectorAll(".band-logo, .logo-frame");
-bandLogos.forEach(logo => {
+document.querySelectorAll(".band-logo, .logo-frame").forEach(logo => {
   logo.addEventListener("click", () => {
-    searchInput.value = logo.alt || logo.textContent;
+    const band = logo.dataset.band;
+    searchInput.value = band;
     searchInput.dispatchEvent(new Event("input"));
   });
 });
@@ -191,4 +322,3 @@ document.querySelectorAll(".chip").forEach(chip => {
     searchInput.dispatchEvent(new Event("input"));
   });
 });
-
