@@ -220,6 +220,12 @@ function renderCards(data) {
   const list = document.querySelector(".live-list");
   list.innerHTML = "";
 
+    if (data.length === 0) {
+    list.innerHTML = `<p class="no-result">該当するLIVEはありません</p>`;
+    return;
+  }
+
+
   let lastMonth = "";
 
   data.forEach(item => {
