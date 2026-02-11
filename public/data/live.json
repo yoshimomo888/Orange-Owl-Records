@@ -2,7 +2,7 @@
   {
     "date": "2026/02/01",
     "title": "HITORIJIME CLUB TOUR OKAWARI TIME",
-    "venue": "宮崎FLOOR",
+    "place": "宮崎FLOOR",
     "time": "OPEN 16:15 / START 17:00",
     "ticket": "前売り ¥3900",
     "band": "TETORA",
@@ -11,7 +11,7 @@
   {
     "date": "2026/02/07",
     "title": "THE NINTH APOLLO pre “15曲勝負 2マン”",
-    "venue": "福岡Queblick",
+    "place": "福岡Queblick",
     "time": "OPEN 17:15 / START 18:00",
     "ticket": "前売り ¥3500",
     "band": "TETORA",
@@ -20,7 +20,7 @@
   {
     "date": "2026/02/13",
     "title": "TETORA pre “ゲリラワンマン for the future”",
-    "venue": "東京 渋谷O-Crest",
+    "place": "東京 渋谷O-Crest",
     "time": "OPEN 17:45 / START 18:30",
     "ticket": "前売り ¥3900",
     "band": "TETORA",
@@ -29,7 +29,7 @@
   {
     "date": "2026/02/21",
     "title": "FOMARE OVER TOUR 25-26",
-    "venue": "香川 高松DIME",
+    "place": "香川 高松DIME",
     "time": "OPEN 17:30 / START 18:00",
     "ticket": "前売り ¥4800",
     "band": "TETORA",
@@ -38,7 +38,7 @@
   {
     "date": "2026/02/22",
     "title": "FOMARE OVER TOUR 25-26",
-    "venue": "愛媛 松山WstudioRED",
+    "place": "愛媛 松山WstudioRED",
     "time": "OPEN 17:00 / START 18:00",
     "ticket": "前売り ¥4800",
     "band": "TETORA",
@@ -47,7 +47,7 @@
   {
     "date": "2026/02/28",
     "title": "THE NINTH APOLLO pre ハローミドルグラウン3",
-    "venue": "Zepp DiverCity (TOKYO)",
+    "place": "Zepp DiverCity (TOKYO)",
     "time": "OPEN 12:15 / START 13:00",
     "ticket": "前売り ¥5000",
     "band": "TETORA",
@@ -56,7 +56,7 @@
   {
     "date": "2026/03/14",
     "title": "TETORA × 灼けるなタウン クレイジー＆リアル ツアー 第3期",
-    "venue": "沖縄 那覇 桜坂セントラル",
+    "place": "沖縄 那覇 桜坂セントラル",
     "time": "OPEN 12:30 / START 13:00",
     "ticket": "前売り ¥3500",
     "band": "TETORA",
@@ -65,7 +65,7 @@
   {
     "date": "2026/03/20",
     "title": "ツタロックフェス2026",
-    "venue": "千葉県 幕張メッセ",
+    "place": "千葉県 幕張メッセ",
     "time": "OPEN 9:00",
     "ticket": "前売り ¥12000",
     "band": "TETORA",
@@ -74,7 +74,7 @@
   {
     "date": "2026/03/24",
     "title": "TETORA × 灼けるなタウン クレイジー＆リアル ツアー 第3期",
-    "venue": "千葉LOOK",
+    "place": "千葉LOOK",
     "time": "OPEN 18:15 / START 19:00",
     "ticket": "前売り ¥3900",
     "band": "TETORA",
@@ -83,7 +83,7 @@
   {
     "date": "2026/05/10",
     "title": "COMING KOBE26",
-    "venue": "兵庫県 神戸メリケンパーク",
+    "place": "兵庫県 神戸メリケンパーク",
     "time": "OPEN 9:00 / START 10:00",
     "ticket": "無料（※各種チケットあり）",
     "band": "TETORA",
@@ -92,7 +92,7 @@
   {
     "date": "2026/05/30",
     "title": "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
-    "venue": "大阪府 海とのふれあい広場",
+    "place": "大阪府 海とのふれあい広場",
     "time": "",
     "ticket": "2日通し券 ¥28000",
     "band": "TETORA",
@@ -101,7 +101,7 @@
   {
     "date": "2026/05/31",
     "title": "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
-    "venue": "大阪府 海とのふれあい広場",
+    "place": "大阪府 海とのふれあい広場",
     "time": "",
     "ticket": "2日通し券 ¥28000",
     "band": "TETORA",
