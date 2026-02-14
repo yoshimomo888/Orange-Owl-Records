@@ -167,6 +167,20 @@ const liveData = [
   }
 ];
 
+
+// ------------------------------
+// バンドごとの公式URL
+// ------------------------------
+const bandUrl = {
+  "TETORA": "https://www.tetoraosaka.com/live",
+  "アルステイク": "https://alstake.com/live",
+  "ammo": "https://ammoosaka.com/live",
+  "東京、君がいない街": "https://tokyokimimati.ryzm.jp/live",
+  "マタノシタシティー": "https://matanoshita.city/live"
+};
+
+
+
 // ------------------------------
 // 曜日
 // ------------------------------
@@ -204,7 +218,12 @@ function createLiveCard(item) {
       </div>
 
       <div class="live-body">
-        <p class="band">${item.band}</p>
+        <p class="band">
+  ${item.band}
+  <a href="${bandUrl[item.band]}" class="band-link" target="_blank" rel="noopener noreferrer">
+    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+  </a>
+</p>
         <p class="title">${item.title}</p>
         <p class="place">${item.place}</p>
         <p class="time">${item.time}</p>

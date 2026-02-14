@@ -309,6 +309,21 @@ body {
   text-decoration: underline;
 }
 
+/* リンクアイコン */
+.band-link {
+  margin-left: 6px;
+  text-decoration: none;
+}
+
+.band-link i {
+  font-size: 0.85em;
+  color: #4a7bd1;
+}
+
+.band-link:hover i {
+  opacity: 0.7;
+}
+
 /* 月帯（02 2026） */
 .month-header {
   font-size: 40px;
