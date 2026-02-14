@@ -4,11 +4,6 @@ body {
   overflow-x: hidden;
 }
 
-main {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 /* ロゴエリア全体 */
 .logo-area {
   padding: 20px 16px;
@@ -67,6 +62,11 @@ main {
   /* ← 中央基準で拡大 */
 }
 
+.logo-area {
+  padding: 20px 0;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
 
 /* 検索エリア全体 */
@@ -380,3 +380,7 @@ main {
   color: #666;
 }
 
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
