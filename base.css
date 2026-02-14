@@ -13,8 +13,9 @@ body {
 
 /* 事務所ロゴ（中央） */
 .logo-area .agency img {
-  width: 140px;
   margin-bottom: 20px;
+  max-height: 80px;
+  width: auto;
 }
 
 .agency {
@@ -63,7 +64,8 @@ body {
 }
 
 .logo-area {
-  padding: 20px 0;
+  overflow: visible;
+  padding: 12px 0;
   max-width: 100%;
   overflow-x: hidden;
 }
