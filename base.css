@@ -3,6 +3,11 @@ body {
   font-family: "LINE Seed JP", sans-serif;
 }
 
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /* ロゴエリア全体 */
 .logo-area {
   padding: 20px 16px;
