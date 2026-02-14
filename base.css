@@ -9,7 +9,7 @@ body {
   padding: 20px 0;
   text-align: center;
   background: #fff;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   max-width: 100%;
 }
 
