@@ -6,16 +6,20 @@ body {
 
 /* ロゴエリア全体 */
 .logo-area {
-  padding: 20px 16px;
+  padding: 20px 0;
   text-align: center;
   background: #fff;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.logo-area {
 }
 
 /* 事務所ロゴ（中央） */
 .logo-area .agency img {
+  width: 140px;
   margin-bottom: 20px;
-  max-height: 80px;
-  width: auto;
 }
 
 .agency {
@@ -63,12 +67,6 @@ body {
   /* ← 中央基準で拡大 */
 }
 
-.logo-area {
-  overflow: visible;
-  padding: 12px 0;
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 
 /* 検索エリア全体 */
