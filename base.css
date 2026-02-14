@@ -134,6 +134,8 @@ main {
 .pref-chips {
   margin-top: 16px;
   display: flex;
+  flex-wrap: wrap;
+  /* ← これが超重要 */
   gap: 10px;
 }
 
@@ -165,6 +167,7 @@ main {
   margin-bottom: 16px;
   /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08); */
   gap: 16px;
+  max-width: 100%;
 }
 
 /* 左側：日付ブロック（参考サイト風） */
