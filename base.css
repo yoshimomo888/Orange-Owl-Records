@@ -1,6 +1,7 @@
 
 body {
   font-family: "LINE Seed JP", sans-serif;
+  overflow-x: hidden;
 }
 
 main {
