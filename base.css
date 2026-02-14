@@ -25,7 +25,7 @@ body {
 .agency {
   width: 100%;
   max-width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 /* バンドロゴの並び */
