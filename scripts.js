@@ -58,112 +58,157 @@ const dowList = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 // ------------------------------
 const liveData = [
   {
-    "date": "2026/02/01",
-    "title": "HITORIJIME CLUB TOUR OKAWARI TIME",
-    "place": "宮崎FLOOR",
-    "time": "OPEN 16:15 / START 17:00",
-    "ticket": "前売り ¥3900",
-    "band": "TETORA",
-    "pref": "宮崎"
+    date: "2026/02/21",
+    title: "FOMARE OVER TOUR 25-26",
+    place: "香川 高松DIME",
+    time: "OPEN 17:30 / START 18:00",
+    ticket: "前売り 4800円",
+    band: "TETORA",
+    pref: "香川"
   },
   {
-    "date": "2026/02/07",
-    "title": "THE NINTH APOLLO pre “15曲勝負 2マン”",
-    "place": "福岡Queblick",
-    "time": "OPEN 17:15 / START 18:00",
-    "ticket": "前売り ¥3500",
-    "band": "TETORA",
-    "pref": "福岡"
+    date: "2026/02/22",
+    title: "FOMARE OVER TOUR 25-26",
+    place: "愛媛 松山WstudioRED",
+    time: "OPEN 17:00 / START 18:00",
+    ticket: "前売り 4800円",
+    band: "TETORA",
+    pref: "愛媛"
   },
   {
-    "date": "2026/02/13",
-    "title": "TETORA pre “ゲリラワンマン for the future”",
-    "place": "東京 渋谷O-Crest",
-    "time": "OPEN 17:45 / START 18:30",
-    "ticket": "前売り ¥3900",
-    "band": "TETORA",
-    "pref": "東京"
+    date: "2026/02/28",
+    title: "THE NINTH APOLLO pre ハローミドルグラウンド3",
+    place: "Zepp DiverCity(TOKYO)",
+    time: "OPEN 12:15 / START 13:00",
+    ticket: "前売り 5000円",
+    band: "TETORA",
+    pref: "東京"
   },
   {
-    "date": "2026/02/21",
-    "title": "FOMARE OVER TOUR 25-26",
-    "place": "香川 高松DIME",
-    "time": "OPEN 17:30 / START 18:00",
-    "ticket": "前売り ¥4800",
-    "band": "TETORA",
-    "pref": "香川"
+    date: "2026/03/01",
+    title: "東京、君がいない街 睨んで疑ってツアー初日 CLUB PHASE 25th 1st DAY",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "前売り 3500円",
+    band: "TETORA",
+    pref: "東京"
   },
   {
-    "date": "2026/02/22",
-    "title": "FOMARE OVER TOUR 25-26",
-    "place": "愛媛 松山WstudioRED",
-    "time": "OPEN 17:00 / START 18:00",
-    "ticket": "前売り ¥4800",
-    "band": "TETORA",
-    "pref": "愛媛"
+    date: "2026/03/08",
+    title: "アメ村あかちょうちん5周年企画 【THE ZIAGE】 あかちょうちん移転記念イベント",
+    place: "大阪 心斎橋BRONZE",
+    time: "OPEN 17:00 / START 17:30",
+    ticket: "前売り 3000円",
+    band: "TETORA",
+    pref: "大阪"
   },
   {
-    "date": "2026/02/28",
-    "title": "THE NINTH APOLLO pre ハローミドルグラウン3",
-    "place": "Zepp DiverCity (TOKYO)",
-    "time": "OPEN 12:15 / START 13:00",
-    "ticket": "前売り ¥5000",
-    "band": "TETORA",
-    "pref": "東京"
+    date: "2026/03/14",
+    title: "TETORA x 炙りなタウン クレイジー&リアル ツアー 第3期",
+    place: "沖縄 那覇 桜坂セントラル",
+    time: "OPEN 12:30 / START 13:00",
+    ticket: "前売り 3500円",
+    band: "TETORA",
+    pref: "沖縄"
   },
   {
-    "date": "2026/03/14",
-    "title": "TETORA × 灼けるなタウン クレイジー＆リアル ツアー 第3期",
-    "place": "沖縄 那覇 桜坂セントラル",
-    "time": "OPEN 12:30 / START 13:00",
-    "ticket": "前売り ¥3500",
-    "band": "TETORA",
-    "pref": "沖縄"
+    date: "2026/03/20",
+    title: "ツタロックフェス2026",
+    place: "千葉県 幕張メッセ",
+    time: "OPEN 9:00",
+    ticket: "前売り 12000円（各種チケットあり）",
+    band: "TETORA",
+    pref: "千葉"
   },
   {
-    "date": "2026/03/20",
-    "title": "ツタロックフェス2026",
-    "place": "千葉県 幕張メッセ",
-    "time": "OPEN 9:00",
-    "ticket": "前売り ¥12000",
-    "band": "TETORA",
-    "pref": "千葉"
+    date: "2026/03/22",
+    title: "TETORA エピソード0ツアー",
+    place: "宮城 仙台darwin",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "宮城"
   },
   {
-    "date": "2026/03/24",
-    "title": "TETORA × 灼けるなタウン クレイジー＆リアル ツアー 第3期",
-    "place": "千葉LOOK",
-    "time": "OPEN 18:15 / START 19:00",
-    "ticket": "前売り ¥3900",
-    "band": "TETORA",
-    "pref": "千葉"
+    date: "2026/03/24",
+    title: "TETORA x 炙りなタウン クレイジー&リアル ツアー 第3期",
+    place: "千葉LOOK",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "千葉"
   },
   {
-    "date": "2026/05/10",
-    "title": "COMING KOBE26",
-    "place": "兵庫県 神戸メリケンパーク",
-    "time": "OPEN 9:00 / START 10:00",
-    "ticket": "無料（※各種チケットあり）",
-    "band": "TETORA",
-    "pref": "兵庫"
+    date: "2026/04/01",
+    title: "TETORA エピソード0ツアー",
+    place: "福岡BEAT STATION",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "福岡"
   },
   {
-    "date": "2026/05/30",
-    "title": "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
-    "place": "大阪府 海とのふれあい広場",
-    "time": "",
-    "ticket": "2日通し券 ¥28000",
-    "band": "TETORA",
-    "pref": "大阪"
+    date: "2026/04/16",
+    title: "参源色 - sangensyoku -",
+    place: "東京 渋谷Spotify O-EAST",
+    time: "OPEN 17:30 / START 18:30",
+    ticket: "前売り（各種チケットあり）",
+    band: "TETORA",
+    pref: "東京"
   },
   {
-    "date": "2026/05/31",
-    "title": "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
-    "place": "大阪府 海とのふれあい広場",
-    "time": "",
-    "ticket": "2日通し券 ¥28000",
-    "band": "TETORA",
-    "pref": "大阪"
+    date: "2026/05/10",
+    title: "COMING KOBE26",
+    place: "兵庫県 神戸メリケンパーク 常設ステージ / 特設ステージ",
+    time: "OPEN 9:00 / START 10:00",
+    ticket: "無料（各種チケットあり）",
+    band: "TETORA",
+    pref: "兵庫"
+  },
+  {
+    date: "2026/05/14",
+    title: "TETORA エピソード0ツアー",
+    place: "東京 渋谷CLUB QUATTRO",
+    time: "OPEN 18:00 / START 19:00",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "東京"
+  },
+  {
+    date: "2026/05/17",
+    title: "TETORA エピソード0ツアー",
+    place: "愛知 名古屋CLUB QUATTRO",
+    time: "OPEN 17:30 / START 18:30",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "愛知"
+  },
+  {
+    date: "2026/05/30",
+    title: "OSAKA METROPOLITAN ROCK FESTIVAL 2026",
+    place: "大阪堺 海とのふれあい広場",
+    time: "",
+    ticket: "2日通し券 28000円",
+    band: "TETORA",
+    pref: "大阪"
+  },
+  {
+    date: "2026/06/06",
+    title: "TETORA エピソード0ツアー",
+    place: "北海道 札幌ペニーレーン24",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "北海道"
+  },
+  {
+    date: "2026/06/25",
+    title: "TETORA エピソード0ツアー",
+    place: "大阪 梅田CLUB QUATTRO",
+    time: "OPEN 18:00 / START 19:00",
+    ticket: "前売り 3900円",
+    band: "TETORA",
+    pref: "大阪"
   }
 ];
 
