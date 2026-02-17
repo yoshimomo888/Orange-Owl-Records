@@ -473,7 +473,7 @@ document.querySelectorAll(".band-logo, .logo-frame").forEach(logo => {
 
 document.querySelector(".agency").addEventListener("click", () => {
   searchInput.value = "";
-  renderCards(liveData);
+  renderCards(allLiveData);   // ← これに変更
 });
 
 document.querySelectorAll(".chip").forEach(chip => {
