@@ -3,20 +3,13 @@ body {
   font-family: "LINE Seed JP", sans-serif;
   overflow-x: hidden;
 }
+
+
 /* ロゴエリア全体 */
 .logo-area {
   padding: 20px 0;
   text-align: center;
   background: #fff;
-  /* overflow-x: hidden; ← A案では邪魔なので削除 */
-  max-width: 100%;
-}
-/* ロゴエリア全体 */
-.logo-area {
-  padding: 20px 0;
-  text-align: center;
-  background: #fff;
-  overflow-x: hidden;
   max-width: 100%;
 }
 
@@ -40,7 +33,7 @@ body {
   white-space: nowrap;
   padding: 0 10px;
   padding-left: 40px;
-  /* ← 左の余白（ももか希望） */
+  /* 左の余白（ももか希望） */
   box-sizing: border-box;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -50,9 +43,8 @@ body {
   display: none;
 }
 
-/* ロゴの箱（画像ロゴも仮ロゴも高さ50pxに統一） */
-.band-logo,
-.logo-frame {
+/* ロゴの箱（高さ50pxに統一） */
+.band-logo {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -68,15 +60,6 @@ body {
   object-position: center;
   display: block;
 }
-
-/* 仮ロゴ枠（文字ロゴ） */
-/* .logo-frame {
-  padding: 6px 12px;
-  background: #ddd;
-  border-radius: 6px;
-  font-size: 14px;
-  color: #666;
-} */
 
 /* 検索エリア全体 */
 .search-section {

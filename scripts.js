@@ -58,10 +58,6 @@ const dowList = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 // ------------------------------
 
 
-// ------------------------------
-// TETORA
-// ------------------------------
-
 const liveData = [
   {
     date: "2026/02/21",
@@ -70,7 +66,8 @@ const liveData = [
     time: "OPEN 17:30 / START 18:00",
     ticket: "前売り 4800円",
     band: "TETORA",
-    pref: "香川"
+    pref: "香川",
+    event_id: "20260221-TETORA"
   },
   {
     date: "2026/02/22",
@@ -79,7 +76,8 @@ const liveData = [
     time: "OPEN 17:00 / START 18:00",
     ticket: "前売り 4800円",
     band: "TETORA",
-    pref: "愛媛"
+    pref: "愛媛",
+    event_id: "20260222-TETORA"
   },
   {
     date: "2026/02/28",
@@ -88,7 +86,8 @@ const liveData = [
     time: "OPEN 12:15 / START 13:00",
     ticket: "前売り 5000円",
     band: "TETORA",
-    pref: "東京"
+    pref: "東京",
+    event_id: "20260228-TETORA_ammo"
   },
   {
     date: "2026/03/01",
@@ -97,7 +96,8 @@ const liveData = [
     time: "OPEN 17:15 / START 18:00",
     ticket: "前売り 3500円",
     band: "TETORA",
-    pref: "東京"
+    pref: "東京",
+    event_id: "20260301-TETORA"
   },
   {
     date: "2026/03/08",
@@ -106,7 +106,8 @@ const liveData = [
     time: "OPEN 17:00 / START 17:30",
     ticket: "前売り 3000円",
     band: "TETORA",
-    pref: "大阪"
+    pref: "大阪",
+    event_id: "20260308-TETORA"
   },
   {
     date: "2026/03/14",
@@ -115,7 +116,8 @@ const liveData = [
     time: "OPEN 12:30 / START 13:00",
     ticket: "前売り 3500円",
     band: "TETORA",
-    pref: "沖縄"
+    pref: "沖縄",
+    event_id: "20260314-TETORA"
   },
   {
     date: "2026/03/20",
@@ -124,7 +126,8 @@ const liveData = [
     time: "OPEN 9:00",
     ticket: "前売り 12000円（各種チケットあり）",
     band: "TETORA",
-    pref: "千葉"
+    pref: "千葉",
+    event_id: "20260320-TETORA"
   },
   {
     date: "2026/03/22",
@@ -133,7 +136,8 @@ const liveData = [
     time: "OPEN 17:15 / START 18:00",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "宮城"
+    pref: "宮城",
+    event_id: "20260322-TETORA"
   },
   {
     date: "2026/03/24",
@@ -142,7 +146,8 @@ const liveData = [
     time: "OPEN 18:15 / START 19:00",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "千葉"
+    pref: "千葉",
+    event_id: "20260324-TETORA"
   },
   {
     date: "2026/04/01",
@@ -151,7 +156,8 @@ const liveData = [
     time: "OPEN 18:15 / START 19:00",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "福岡"
+    pref: "福岡",
+    event_id: "20260401-TETORA"
   },
   {
     date: "2026/04/16",
@@ -160,17 +166,19 @@ const liveData = [
     time: "OPEN 17:30 / START 18:30",
     ticket: "前売り（各種チケットあり）",
     band: "TETORA",
-    pref: "東京"
+    pref: "東京",
+    event_id: "20260416-TETORA"
   },
-  {
-    date: "2026/05/10",
-    title: "COMING KOBE26",
-    place: "兵庫県 神戸メリケンパーク 常設ステージ / 特設ステージ",
-    time: "OPEN 9:00 / START 10:00",
-    ticket: "無料（各種チケットあり）",
-    band: "TETORA",
-    pref: "兵庫"
-  },
+{
+  date: "2026/05/10",
+  title: "COMING KOBE26",
+  place: "兵庫県 神戸メリケンパーク 常設ステージ / 特設ステージ",
+  time: "OPEN 9:00 / START 10:00",
+  ticket: "無料（各種チケットあり）",
+  band: "TETORA",
+  pref: "兵庫",
+  event_id: "20260510-TETORA_ammo"
+},
   {
     date: "2026/05/14",
     title: "TETORA エピソード0ツアー",
@@ -178,7 +186,8 @@ const liveData = [
     time: "OPEN 18:00 / START 19:00",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "東京"
+    pref: "東京",
+    event_id: "20260514-TETORA"
   },
   {
     date: "2026/05/17",
@@ -187,7 +196,8 @@ const liveData = [
     time: "OPEN 17:30 / START 18:30",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "愛知"
+    pref: "愛知",
+    event_id: "20260517-TETORA"
   },
   {
     date: "2026/05/30",
@@ -196,7 +206,8 @@ const liveData = [
     time: "",
     ticket: "2日通し券 28000円",
     band: "TETORA",
-    pref: "大阪"
+    pref: "大阪",
+    event_id: "20260530-TETORA"
   },
   {
     date: "2026/06/06",
@@ -205,7 +216,8 @@ const liveData = [
     time: "OPEN 17:15 / START 18:00",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "北海道"
+    pref: "北海道",
+    event_id: "20260606-TETORA"
   },
   {
     date: "2026/06/25",
@@ -214,7 +226,8 @@ const liveData = [
     time: "OPEN 18:00 / START 19:00",
     ticket: "前売り 3900円",
     band: "TETORA",
-    pref: "大阪"
+    pref: "大阪",
+    event_id: "20260625-TETORA"
   }
 ];
 
@@ -229,7 +242,8 @@ const ammoLiveData = [
     time: "OPEN 12:15 / START 13:00",
     ticket: "前売り 5000円 +1Drink",
     band: "ammo",
-    pref: "東京"
+    pref: "東京",
+    event_id: "20260228-TETORA_ammo"
   },
   {
     date: "2026/03/11",
@@ -238,7 +252,8 @@ const ammoLiveData = [
     time: "OPEN 18:00 / START 18:30",
     ticket: "前売り 4800円 +1Drink",
     band: "ammo",
-    pref: "宮崎"
+    pref: "宮崎",
+    event_id: "20260311-ammo"
   },
   {
     date: "2026/03/12",
@@ -247,7 +262,8 @@ const ammoLiveData = [
     time: "OPEN 18:00 / START 18:30",
     ticket: "前売り 4800円 +1Drink",
     band: "ammo",
-    pref: "鹿児島"
+    pref: "鹿児島",
+    event_id: "20260312-ammo"
   },
   {
     date: "2026/03/20",
@@ -256,7 +272,8 @@ const ammoLiveData = [
     time: "OPEN 9:00 / START 11:00",
     ticket: "前売り 12000円",
     band: "ammo",
-    pref: "千葉"
+    pref: "千葉",
+    event_id: "20260320-ammo"
   },
   {
     date: "2026/03/21",
@@ -265,7 +282,8 @@ const ammoLiveData = [
     time: "OPEN 13:15 / START 14:00",
     ticket: "前売り 4500円 +1Drink",
     band: "ammo",
-    pref: "宮城"
+    pref: "宮城",
+    event_id: "20260321-ammo"
   },
   {
     date: "2026/04/03",
@@ -274,7 +292,8 @@ const ammoLiveData = [
     time: "OPEN 18:00 / START 19:00",
     ticket: "前売り 4200円 +1Drink",
     band: "ammo",
-    pref: "愛知"
+    pref: "愛知",
+    event_id: "20260403-ammo"
   },
   {
     date: "2026/04/18",
@@ -283,17 +302,19 @@ const ammoLiveData = [
     time: "OPEN 18:00 / START 18:30",
     ticket: "前売り 3400円 +1Drink",
     band: "ammo",
-    pref: "三重"
+    pref: "三重",
+    event_id: "20260418-ammo"
   },
   {
-    date: "2026/05/10",
-    title: "COMING KOBE26",
-    place: "兵庫 神戸メリケンパーク",
-    time: "OPEN 10:00",
-    ticket: "入場無料",
-    band: "ammo",
-    pref: "兵庫"
-  }
+  date: "2026/05/10",
+  title: "COMING KOBE26",
+  place: "兵庫 神戸メリケンパーク",
+  time: "OPEN 10:00",
+  ticket: "入場無料",
+  band: "ammo",
+  pref: "兵庫",
+  event_id: "20260510-TETORA_ammo"
+}
 ];
 
 // ------------------------------
@@ -316,7 +337,6 @@ const bandUrl = {
 };
 
 
-
 // ------------------------------
 // 曜日
 // ------------------------------
@@ -324,6 +344,7 @@ function getDow(dateStr) {
   const date = new Date(dateStr);
   return dowList[date.getDay()];
 }
+
 
 // ------------------------------
 // 日付（正方形＋斜線）
@@ -340,10 +361,50 @@ function formatDate(dateStr) {
   );
 }
 
+
 // ------------------------------
-// カード生成
+// ★ event_id ごとにライブをまとめる
+// ------------------------------
+function groupLivesByEvent(lives) {
+  const grouped = {};
+
+  lives.forEach(live => {
+    if (!grouped[live.event_id]) {
+      grouped[live.event_id] = {
+        date: live.date,
+        title: live.title,
+        place: live.place,
+        time: live.time,
+        bands: []
+      };
+    }
+    grouped[live.event_id].bands.push(live.band);
+  });
+
+  return Object.values(grouped);
+}
+
+
+// ------------------------------
+// ★ カード生成（複数バンド＋リンク対応）
 // ------------------------------
 function createLiveCard(item) {
+
+  // バンド名をリンク付きで生成
+  const bandLinks = item.bands
+    .map(band => {
+      const url = bandUrl[band] || "#";
+      return `
+        <span class="band-with-link">
+          ${band}
+          <a href="${url}" class="band-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </span>
+      `;
+    })
+    .join(" / ");
+
   return `
     <div class="live-card">
       <div class="live-date-block">
@@ -355,11 +416,8 @@ function createLiveCard(item) {
 
       <div class="live-body">
         <p class="band">
-  ${item.band}
-  <a href="${bandUrl[item.band]}" class="band-link" target="_blank" rel="noopener noreferrer">
-    <i class="fa-solid fa-arrow-up-right-from-square"></i>
-  </a>
-</p>
+          ${bandLinks}
+        </p>
         <p class="title">${item.title}</p>
         <p class="place">${item.place}</p>
         <p class="time">${item.time}</p>
@@ -368,22 +426,24 @@ function createLiveCard(item) {
   `;
 }
 
+
 // ------------------------------
-// カード描画
+// ★ カード描画（まとめ後のデータを描画）
 // ------------------------------
 function renderCards(data) {
   const list = document.querySelector(".live-list");
   list.innerHTML = "";
 
-    if (data.length === 0) {
+  if (data.length === 0) {
     list.innerHTML = `<p class="no-result">該当するLIVEはありません</p>`;
     return;
   }
 
+  const grouped = groupLivesByEvent(data);
 
   let lastMonth = "";
 
-  data.forEach(item => {
+  grouped.forEach(item => {
     const date = new Date(item.date);
     const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
@@ -399,6 +459,7 @@ function renderCards(data) {
 }
 
 renderCards(allLiveData);
+
 
 // ------------------------------
 // サジェスト
@@ -435,6 +496,7 @@ suggestList.addEventListener("click", (e) => {
   }
 });
 
+
 // ------------------------------
 // 検索
 // ------------------------------
@@ -460,10 +522,11 @@ searchInput.addEventListener("input", () => {
   renderCards(filtered);
 });
 
+
 // ------------------------------
 // ロゴ・チップ
 // ------------------------------
-document.querySelectorAll(".band-logo, .logo-frame").forEach(logo => {
+document.querySelectorAll(".band-logo").forEach(logo => {
   logo.addEventListener("click", () => {
     const band = logo.dataset.band;
     searchInput.value = band;
@@ -473,7 +536,7 @@ document.querySelectorAll(".band-logo, .logo-frame").forEach(logo => {
 
 document.querySelector(".agency").addEventListener("click", () => {
   searchInput.value = "";
-  renderCards(allLiveData);   // ← これに変更
+  renderCards(allLiveData);
 });
 
 document.querySelectorAll(".chip").forEach(chip => {
