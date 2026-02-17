@@ -87,7 +87,7 @@ const liveData = [
     ticket: "前売り 5000円",
     band: "TETORA",
     pref: "東京",
-    event_id: "20260228-TETORA_ammo"
+    event_id: "20260228-TETORA_ammo_アルステイク"
   },
   {
     date: "2026/03/01",
@@ -119,16 +119,16 @@ const liveData = [
     pref: "沖縄",
     event_id: "20260314-TETORA"
   },
-  {
-    date: "2026/03/20",
-    title: "ツタロックフェス2026",
-    place: "千葉県 幕張メッセ",
-    time: "OPEN 9:00",
-    ticket: "前売り 12000円（各種チケットあり）",
-    band: "TETORA",
-    pref: "千葉",
-    event_id: "20260320-TETORA"
-  },
+{
+  date: "2026/03/20",
+  title: "ツタロックフェス2026",
+  place: "千葉県 幕張メッセ",
+  time: "OPEN 9:00",
+  ticket: "前売り 12000円（各種チケットあり）",
+  band: "TETORA",
+  pref: "千葉",
+  event_id: "20260320-TETORA_ammo"
+},
   {
     date: "2026/03/22",
     title: "TETORA エピソード0ツアー",
@@ -177,7 +177,7 @@ const liveData = [
   ticket: "無料（各種チケットあり）",
   band: "TETORA",
   pref: "兵庫",
-  event_id: "20260510-TETORA_ammo"
+  event_id: "20260510-TETORA_ammo_アルステイク"
 },
   {
     date: "2026/05/14",
@@ -243,7 +243,7 @@ const ammoLiveData = [
     ticket: "前売り 5000円 +1Drink",
     band: "ammo",
     pref: "東京",
-    event_id: "20260228-TETORA_ammo"
+    event_id: "20260228-TETORA_ammo_アルステイク"
   },
   {
     date: "2026/03/11",
@@ -266,15 +266,15 @@ const ammoLiveData = [
     event_id: "20260312-ammo"
   },
   {
-    date: "2026/03/20",
-    title: "Vポイント pre.「ツタロックフェス 2026」",
-    place: "千葉 幕張メッセ国際展示場 4・5・6・7ホール",
-    time: "OPEN 9:00 / START 11:00",
-    ticket: "前売り 12000円",
-    band: "ammo",
-    pref: "千葉",
-    event_id: "20260320-ammo"
-  },
+  date: "2026/03/20",
+  title: "Vポイント pre.「ツタロックフェス 2026」",
+  place: "千葉 幕張メッセ国際展示場 4・5・6・7ホール",
+  time: "OPEN 9:00 / START 11:00",
+  ticket: "前売り 12000円",
+  band: "ammo",
+  pref: "千葉",
+  event_id: "20260320-TETORA_ammo"
+},
   {
     date: "2026/03/21",
     title: "THE NINTH APOLLO pre.「ennの25周年を祝うサーキット」",
@@ -283,7 +283,7 @@ const ammoLiveData = [
     ticket: "前売り 4500円 +1Drink",
     band: "ammo",
     pref: "宮城",
-    event_id: "20260321-ammo"
+    event_id: "20260321-ammo_アルステイク"
   },
   {
     date: "2026/04/03",
@@ -313,14 +313,232 @@ const ammoLiveData = [
   ticket: "入場無料",
   band: "ammo",
   pref: "兵庫",
-  event_id: "20260510-TETORA_ammo"
+  event_id: "20260510-TETORA_ammo_アルステイク"
 }
 ];
+// ----------
+// アルステイク
+// ----------
+
+const alstakeLiveData = [
+  {
+    date: "2026/02/17",
+    title: "FOMARE 「OVER TOUR 25-26」",
+    place: "山口 LIVE rise SHUNAN",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "ADV ¥4,800 +1Drink",
+    band: "アルステイク",
+    pref: "山口",
+    event_id: "20260217-アルステイク"
+  },
+  {
+    date: "2026/02/23",
+    title: "BRONZE pre 「BRONZE 12周年祭 \"キョーメー 2月\"」",
+    place: "大阪 心斎橋BRONZE",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "ADV ¥3,500 +1Drink",
+    band: "アルステイク",
+    pref: "大阪",
+    event_id: "20260223-アルステイク"
+  },
+  {
+    date: "2026/02/28",
+    title: "THE NINTH APOLLO pre 「ハローミドルグラウンド3」",
+    place: "東京 Zepp DiverCity(TOKYO)",
+    time: "OPEN 12:15 / START 13:00",
+    ticket: "ADV ¥5,000 +1Drink",
+    band: "アルステイク",
+    pref: "東京",
+    event_id: "20260228-TETORA_ammo_アルステイク"
+  },
+  {
+    date: "2026/03/03",
+    title: "THE NINTH APOLLO pre 「PHASEの25周年を祝う \"2000 フェイズと同じ歳の歌い手たち\"」",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 17:00 / START 17:30",
+    ticket: "ADV ¥3,025 +1Drink",
+    band: "アルステイク",
+    pref: "東京",
+    event_id: "20260303-アルステイク"
+  },
+  {
+    date: "2026/03/08",
+    title: "「TENJIN ONTAQ 2026」",
+    place: "福岡 天神地区8会場",
+    time: "OPEN 11:30 / START 12:30",
+    ticket: "1日券 ¥6,000 / 2日通し券 ¥11,000",
+    band: "アルステイク",
+    pref: "福岡",
+    event_id: "20260308-アルステイク"
+  },
+  {
+    date: "2026/03/09",
+    title: "Brown Basket 「ぶっ滾るツアー 2026」",
+    place: "香川 高松RIZIN'",
+    time: "OPEN 18:30 / START 19:00",
+    ticket: "ADV ¥3,300 +1Drink",
+    band: "アルステイク",
+    pref: "香川",
+    event_id: "20260309-アルステイク"
+  },
+  {
+    date: "2026/03/14",
+    title: "「見放題東京2026」",
+    place: "東京 新宿12会場",
+    time: "OPEN 11:30 / START 12:00",
+    ticket: "ADV ¥5,500 +1Drink",
+    band: "アルステイク",
+    pref: "東京",
+    event_id: "20260314-アルステイク"
+  },
+  {
+    date: "2026/03/16",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "東京",
+    event_id: "20260316-アルステイク"
+  },
+  {
+    date: "2026/03/17",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "東京",
+    event_id: "20260317-アルステイク"
+  },
+  {
+    date: "2026/03/21",
+    title: "THE NINTH APOLLO pre 「ennの25周年を祝うサーキット」",
+    place: "宮城 仙台enn 2nd & 3rd",
+    time: "OPEN 13:15 / START 14:00",
+    ticket: "ADV ¥4,500 +1Drink",
+    band: "アルステイク",
+    pref: "宮城",
+    event_id: "20260321-ammo_アルステイク"
+  },
+  {
+    date: "2026/03/22",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "北海道 札幌ペニーレーン24",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "北海道",
+    event_id: "20260322-アルステイク"
+  },
+  {
+    date: "2026/03/26",
+    title: "「THE SUN ALSO RISES vol.397」",
+    place: "神奈川 F.A.D YOKOHAMA",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "一般 ¥3,500 / 学生 ¥2,500 +1Drink",
+    band: "アルステイク",
+    pref: "神奈川",
+    event_id: "20260326-アルステイク"
+  },
+  {
+    date: "2026/03/29",
+    title: "ねぐせ。presents 「HOT de GOOD fest. 2026」",
+    place: "愛知 名古屋COMTEC PORTBASE",
+    time: "OPEN 12:00 / START 13:00",
+    ticket: "ADV ¥6,666 +1Drink",
+    band: "アルステイク",
+    pref: "愛知",
+    event_id: "20260329-アルステイク"
+  },
+  {
+    date: "2026/04/25",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "岡山 YEBISU YA PRO",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "岡山",
+    event_id: "20260425-アルステイク"
+  },
+  {
+    date: "2026/04/30",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "愛知 名古屋CLUB QUATTRO",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "愛知",
+    event_id: "20260430-アルステイク"
+  },
+  {
+    date: "2026/05/08",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "福岡 BEAT STATION",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "福岡",
+    event_id: "20260508-アルステイク"
+  },
+  {
+    date: "2026/05/10",
+    title: "COMING KOBE26",
+    place: "兵庫 神戸メリケンパーク 常設ステージ 特設ステージ",
+    time: "",
+    ticket: "",
+    band: "アルステイク",
+    pref: "兵庫",
+    event_id: "20260510-TETORA_ammo_アルステイク"
+  },
+  {
+    date: "2026/05/13",
+    title: "Blue Mash「この街を出て -去年の続き-」",
+    place: "岡山 CRAZY MAMA 2nd ROOM",
+    time: "OPEN 18:30 / START 19:00",
+    ticket: "ADV ¥4,200 +1Drink",
+    band: "アルステイク",
+    pref: "岡山",
+    event_id: "20260513-アルステイク"
+  },
+  {
+    date: "2026/06/07",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "宮城 仙台darwin",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "宮城",
+    event_id: "20260607-アルステイク"
+  },
+  {
+    date: "2026/06/18",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "大阪 心斎橋BRONZE",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "大阪",
+    event_id: "20260618-アルステイク"
+  },
+  {
+    date: "2026/06/19",
+    title: "アルステイク 「初めてのワンマンツアー」",
+    place: "大阪 心斎橋BRONZE",
+    time: "OPEN 18:15 / START 19:00",
+    ticket: "ADV ¥3,900 +1Drink",
+    band: "アルステイク",
+    pref: "大阪",
+    event_id: "20260619-アルステイク"
+  }
+];
+
+
 
 // ------------------------------
 // 全バンドまとめて日付順にソート
 // ------------------------------
-const allLiveData = [...liveData, ...ammoLiveData];
+const allLiveData = [...liveData, ...ammoLiveData, ...alstakeLiveData];
 
 allLiveData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
