@@ -56,6 +56,12 @@ const dowList = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 // ------------------------------
 // データ本体
 // ------------------------------
+
+
+// ------------------------------
+// TETORA
+// ------------------------------
+
 const liveData = [
   {
     date: "2026/02/21",
@@ -212,6 +218,91 @@ const liveData = [
   }
 ];
 
+// ------------------------------
+// ammo
+// ------------------------------
+const ammoLiveData = [
+  {
+    date: "2026/02/28",
+    title: "THE NINTH APOLLO pre 「ハローミドルグラウンド3」",
+    place: "東京 Zepp DiverCity(TOKYO)",
+    time: "OPEN 12:15 / START 13:00",
+    ticket: "前売り 5000円 +1Drink",
+    band: "ammo",
+    pref: "東京"
+  },
+  {
+    date: "2026/03/11",
+    title: "FOMARE pre.「OVER TOUR 25-26」",
+    place: "宮崎 宮崎 LAZARUS",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "前売り 4800円 +1Drink",
+    band: "ammo",
+    pref: "宮崎"
+  },
+  {
+    date: "2026/03/12",
+    title: "FOMARE pre.「OVER TOUR 25-26」",
+    place: "鹿児島 鹿児島 SR HALL",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "前売り 4800円 +1Drink",
+    band: "ammo",
+    pref: "鹿児島"
+  },
+  {
+    date: "2026/03/20",
+    title: "Vポイント pre.「ツタロックフェス 2026」",
+    place: "千葉 幕張メッセ国際展示場 4・5・6・7ホール",
+    time: "OPEN 9:00 / START 11:00",
+    ticket: "前売り 12000円",
+    band: "ammo",
+    pref: "千葉"
+  },
+  {
+    date: "2026/03/21",
+    title: "THE NINTH APOLLO pre.「ennの25周年を祝うサーキット」",
+    place: "宮城 仙台enm 2nd & 3rd",
+    time: "OPEN 13:15 / START 14:00",
+    ticket: "前売り 4500円 +1Drink",
+    band: "ammo",
+    pref: "宮城"
+  },
+  {
+    date: "2026/04/03",
+    title: "Blue Mash pre.「この街を出て -Live House Tour 2026-」",
+    place: "愛知 名古屋DIAMOND HALL",
+    time: "OPEN 18:00 / START 19:00",
+    ticket: "前売り 4200円 +1Drink",
+    band: "ammo",
+    pref: "愛知"
+  },
+  {
+    date: "2026/04/18",
+    title: "at Anytime pre.「TIME OF YOUR LIFE Vol.95 -Baby smoker “VOLTEX” Release Tour 2026-」",
+    place: "三重 鈴鹿ANSWER",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "前売り 3400円 +1Drink",
+    band: "ammo",
+    pref: "三重"
+  },
+  {
+    date: "2026/05/10",
+    title: "COMING KOBE26",
+    place: "兵庫 神戸メリケンパーク",
+    time: "OPEN 10:00",
+    ticket: "入場無料",
+    band: "ammo",
+    pref: "兵庫"
+  }
+];
+
+// ------------------------------
+// 全バンドまとめて日付順にソート
+// ------------------------------
+const allLiveData = [...liveData, ...ammoLiveData];
+
+allLiveData.sort((a, b) => new Date(a.date) - new Date(b.date));
+
 
 // ------------------------------
 // バンドごとの公式URL
@@ -307,8 +398,7 @@ function renderCards(data) {
   });
 }
 
-// 初期表示
-renderCards(liveData);
+renderCards(allLiveData);
 
 // ------------------------------
 // サジェスト
@@ -355,7 +445,7 @@ searchInput.addEventListener("input", () => {
 
   showSuggest(keyword);
 
-  const filtered = liveData.filter(item => {
+  const filtered = allLiveData.filter(item => {
     const matchBand = item.band.toLowerCase().includes(keyword);
     const matchPlace = item.place.toLowerCase().includes(keyword);
     const matchTitle = item.title.toLowerCase().includes(keyword);
