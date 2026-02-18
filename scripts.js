@@ -765,7 +765,7 @@ document.querySelectorAll(".chip").forEach(chip => {
 });
 
 // ------------------------------
-// 初回だけロゴをゆっくり自動スクロール
+// 初回だけロゴをゆっくり一周スクロール（右→左）
 // ------------------------------
 window.addEventListener("load", () => {
   if (localStorage.getItem("logoScrollDone")) return;
@@ -789,25 +789,41 @@ window.addEventListener("load", () => {
 
   if (loadedCount === images.length) startScroll();
 
+  function animateScroll(from, to, duration, callback) {
+    const startTime = performance.now();
+
+    function step(time) {
+      const progress = Math.min((time - startTime) / duration, 1);
+      bands.scrollLeft = from + (to - from) * progress;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      } else if (callback) {
+        callback();
+      }
+    }
+
+    requestAnimationFrame(step);
+  }
+
   function startScroll() {
     const maxScroll = bands.scrollWidth - bands.clientWidth;
     if (maxScroll <= 0) return;
 
-    let current = 0;
-    const duration = 4000; // ← ★ ここが速度（ミリ秒）ゆっくりにしたいなら増やす
-    const startTime = performance.now();
+    // ① 右端までゆっくり移動
+    animateScroll(0, maxScroll, 4000, () => {
 
-    function animate(time) {
-      const progress = Math.min((time - startTime) / duration, 1);
-      bands.scrollLeft = maxScroll * progress;
+      // ② 少し止まる
+      setTimeout(() => {
 
-      if (progress < 1) {
-        requestAnimationFrame(animate);
-      } else {
-        localStorage.setItem("logoScrollDone", "true");
-      }
-    }
+        // ③ 左端までゆっくり戻る
+        animateScroll(maxScroll, 0, 4000, () => {
 
-    requestAnimationFrame(animate);
+          // ④ 初回終了フラグ
+          localStorage.setItem("logoScrollDone", "true");
+        });
+
+      }, 300);
+    });
   }
 });
