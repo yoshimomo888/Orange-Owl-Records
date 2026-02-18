@@ -763,3 +763,50 @@ document.querySelectorAll(".chip").forEach(chip => {
     searchInput.dispatchEvent(new Event("input"));
   });
 });
+
+// ------------------------------
+// 初回だけロゴを自動スクロール（画像読み込み後）
+// ------------------------------
+window.addEventListener("load", () => {
+  // 初回チェック
+  if (localStorage.getItem("logoScrollDone")) return;
+
+  const bands = document.querySelector(".logo-area .bands");
+  if (!bands) return;
+
+  // 画像読み込みを待つ
+  const images = bands.querySelectorAll("img");
+  let loadedCount = 0;
+
+  images.forEach(img => {
+    if (img.complete) {
+      loadedCount++;
+    } else {
+      img.addEventListener("load", () => {
+        loadedCount++;
+        if (loadedCount === images.length) startScroll();
+      });
+    }
+  });
+
+  // 全部 complete だった場合
+  if (loadedCount === images.length) startScroll();
+
+  function startScroll() {
+    const maxScroll = bands.scrollWidth - bands.clientWidth;
+    if (maxScroll <= 0) return;
+
+    // 少し待ってからスクロール（スマホで安定）
+    setTimeout(() => {
+      bands.scrollTo({
+        left: maxScroll,
+        behavior: "smooth"
+      });
+
+      // 終わったらフラグ保存
+      setTimeout(() => {
+        localStorage.setItem("logoScrollDone", "true");
+      }, 1200);
+    }, 300);
+  }
+});
