@@ -794,7 +794,7 @@ window.addEventListener("load", () => {
     if (maxScroll <= 0) return;
 
     let current = 0;
-    const duration = 2500; // ← ★ ここが速度（ミリ秒）ゆっくりにしたいなら増やす
+    const duration = 4000; // ← ★ ここが速度（ミリ秒）ゆっくりにしたいなら増やす
     const startTime = performance.now();
 
     function animate(time) {
