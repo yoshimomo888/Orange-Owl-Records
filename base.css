@@ -52,6 +52,16 @@ body {
   height: 50px;
 }
 
+/* マタノシタシティーだけ高さ35px */
+.band-logo[data-band="マタノシタシティー"] {
+  height: 25px;
+}
+
+/* 東京、君がいない街だけ高さ35px */
+.band-logo[data-band="東京、君がいない街"] {
+  height: 25px;
+}
+
 /* 実ロゴ（画像ロゴ） */
 .band-logo img {
   height: 100%;
