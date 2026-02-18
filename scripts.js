@@ -765,16 +765,14 @@ document.querySelectorAll(".chip").forEach(chip => {
 });
 
 // ------------------------------
-// 初回だけロゴを自動スクロール（画像読み込み後）
+// 初回だけロゴをゆっくり自動スクロール
 // ------------------------------
 window.addEventListener("load", () => {
-  // 初回チェック
   if (localStorage.getItem("logoScrollDone")) return;
 
   const bands = document.querySelector(".logo-area .bands");
   if (!bands) return;
 
-  // 画像読み込みを待つ
   const images = bands.querySelectorAll("img");
   let loadedCount = 0;
 
@@ -789,24 +787,27 @@ window.addEventListener("load", () => {
     }
   });
 
-  // 全部 complete だった場合
   if (loadedCount === images.length) startScroll();
 
   function startScroll() {
     const maxScroll = bands.scrollWidth - bands.clientWidth;
     if (maxScroll <= 0) return;
 
-    // 少し待ってからスクロール（スマホで安定）
-    setTimeout(() => {
-      bands.scrollTo({
-        left: maxScroll,
-        behavior: "smooth"
-      });
+    let current = 0;
+    const duration = 2500; // ← ★ ここが速度（ミリ秒）ゆっくりにしたいなら増やす
+    const startTime = performance.now();
 
-      // 終わったらフラグ保存
-      setTimeout(() => {
+    function animate(time) {
+      const progress = Math.min((time - startTime) / duration, 1);
+      bands.scrollLeft = maxScroll * progress;
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      } else {
         localStorage.setItem("logoScrollDone", "true");
-      }, 1200);
-    }, 300);
+      }
+    }
+
+    requestAnimationFrame(animate);
   }
 });
