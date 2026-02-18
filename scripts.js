@@ -765,7 +765,7 @@ document.querySelectorAll(".chip").forEach(chip => {
 });
 
 // ------------------------------
-// 初回だけロゴをゆっくり一周スクロール（右→左）
+// 初回だけロゴを「輪っか」みたいに一周スクロール
 // ------------------------------
 window.addEventListener("load", () => {
   if (localStorage.getItem("logoScrollDone")) return;
@@ -773,6 +773,10 @@ window.addEventListener("load", () => {
   const bands = document.querySelector(".logo-area .bands");
   if (!bands) return;
 
+  // ★ ロゴを2倍にして帯をつなげる
+  bands.innerHTML += bands.innerHTML;
+
+  // 画像読み込み待ち
   const images = bands.querySelectorAll("img");
   let loadedCount = 0;
 
@@ -789,6 +793,7 @@ window.addEventListener("load", () => {
 
   if (loadedCount === images.length) startScroll();
 
+  // アニメーション関数
   function animateScroll(from, to, duration, callback) {
     const startTime = performance.now();
 
@@ -807,21 +812,19 @@ window.addEventListener("load", () => {
   }
 
   function startScroll() {
-    const maxScroll = bands.scrollWidth - bands.clientWidth;
-    if (maxScroll <= 0) return;
+    const maxScroll = bands.scrollWidth / 2; // 1セット分の幅
 
-    // ① 右端までゆっくり移動
-    animateScroll(0, maxScroll, 4000, () => {
+    // ① 右端（1セット分）までゆっくり移動
+    animateScroll(0, maxScroll, 3000, () => {
 
       // ② 少し止まる
       setTimeout(() => {
 
-        // ③ 左端までゆっくり戻る
-        animateScroll(maxScroll, 0, 4000, () => {
+        // ③ 左端に瞬間移動（輪っかのトリック）
+        bands.scrollLeft = 0;
 
-          // ④ 初回終了フラグ
-          localStorage.setItem("logoScrollDone", "true");
-        });
+        // ④ 初回終了フラグ
+        localStorage.setItem("logoScrollDone", "true");
 
       }, 300);
     });
