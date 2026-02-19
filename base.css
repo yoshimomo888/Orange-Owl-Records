@@ -16,13 +16,59 @@ body {
 /* 事務所ロゴ（中央） */
 .logo-area .agency img {
   width: 140px;
-  margin-bottom: 20px;
 }
 
 .agency {
   width: 100%;
   max-width: 100%;
   overflow: visible;
+}
+
+.bands-heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* BANDS を中央寄せ */
+  align-items: center;
+  margin: 12px 8px 20px 8px;
+  /* ロゴ帯と距離を作る ← 重要 */
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  letter-spacing: 0.5px;
+}
+
+/* BANDS の右に余白 */
+.bands-heading span {
+  margin-right: 8px;
+}
+
+/* 線＋矢印（これを一体化させる） */
+.bands-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 20px);
+  /* BANDS の右から開始 */
+  right: 12px;
+  /* 右端の余白 */
+  height: 1px;
+  background: #666;
+  opacity: 0.6;
+}
+
+/* 矢印（三角） */
+.bands-heading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 13px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.6;
 }
 
 /* バンドロゴの並び（横スクロール） */
@@ -43,23 +89,25 @@ body {
   display: none;
 }
 
+
+
 /* ロゴの箱（高さ50pxに統一） */
 .band-logo {
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
+  height: 40px;
 }
 
 /* マタノシタシティーだけ高さ35px */
 .band-logo[data-band="マタノシタシティー"] img {
-  height: 30px;
+  height: 22px;
 }
 
 /* 東京、君がいない街だけ高さ35px */
 .band-logo[data-band="東京、君がいない街"] img {
-  height: 30px;
+  height: 22px;
 }
 
 /* 実ロゴ（画像ロゴ） */
