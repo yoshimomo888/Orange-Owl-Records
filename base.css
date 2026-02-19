@@ -98,6 +98,12 @@ body {
   align-items: center;
   justify-content: center;
   height: 40px;
+  transition: opacity 0.2s, transform 0.1s
+}
+
+.band-logo:hover {
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 /* マタノシタシティーだけ高さ35px */
@@ -117,6 +123,10 @@ body {
   object-fit: contain;
   object-position: center;
   display: block;
+}
+
+.band-logo:active {
+  transform: scale(0.95);
 }
 
 /* 検索エリア全体 */
@@ -160,6 +170,26 @@ body {
   padding-left: 50px;
   /* アイコン分の余白 */
 }
+
+/* 検索欄が光るアニメーション */
+#search-input.flash {
+  animation: flash 0.4s;
+}
+
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 0px #fff;
+  }
+
+  50% {
+    box-shadow: 0 0 6px #aaa;
+  }
+
+  100% {
+    box-shadow: 0 0 0px #fff;
+  }
+}
+
 
 /* サジェスト（予測変換） */
 .suggest-list {

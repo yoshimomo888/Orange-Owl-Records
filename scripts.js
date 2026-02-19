@@ -764,3 +764,19 @@ document.querySelectorAll(".chip").forEach(chip => {
   });
 });
 
+// すべてのロゴを取得
+const logos = document.querySelectorAll('.band-logo');
+const input = document.getElementById('search-input');
+
+logos.forEach(logo => {
+  logo.addEventListener('click', () => {
+    const bandName = logo.getAttribute('data-band');
+
+    // 検索欄に入れる
+    input.value = bandName;
+
+    // flash アニメーション
+    input.classList.add('flash');
+    setTimeout(() => input.classList.remove('flash'), 400);
+  });
+});
