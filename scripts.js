@@ -58,6 +58,8 @@ const dowList = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
 // ------------------------------
 
 
+// TETORA
+
 const liveData = [
   {
     date: "2026/02/21",
@@ -87,7 +89,7 @@ const liveData = [
     ticket: "前売り 5000円",
     band: "TETORA",
     pref: "東京",
-    event_id: "20260228-TETORA_ammo_アルステイク"
+    event_id: "20260228-TETORA_ammo_アルステイク_マタノシタシティー"
   },
   {
     date: "2026/03/01",
@@ -243,7 +245,7 @@ const ammoLiveData = [
     ticket: "前売り 5000円 +1Drink",
     band: "ammo",
     pref: "東京",
-    event_id: "20260228-TETORA_ammo_アルステイク"
+    event_id: "20260228-TETORA_ammo_アルステイク_マタノシタシティー"
   },
   {
     date: "2026/03/11",
@@ -316,6 +318,8 @@ const ammoLiveData = [
   event_id: "20260510-TETORA_ammo_アルステイク"
 }
 ];
+
+
 // ----------
 // アルステイク
 // ----------
@@ -349,7 +353,7 @@ const alstakeLiveData = [
     ticket: "ADV ¥5,000 +1Drink",
     band: "アルステイク",
     pref: "東京",
-    event_id: "20260228-TETORA_ammo_アルステイク"
+    event_id: "20260228-TETORA_ammo_アルステイク_マタノシタシティー"
   },
   {
     date: "2026/03/03",
@@ -359,7 +363,7 @@ const alstakeLiveData = [
     ticket: "ADV ¥3,025 +1Drink",
     band: "アルステイク",
     pref: "東京",
-    event_id: "20260303-アルステイク"
+    event_id: "20260303-アルステイク_マタノシタシティー"
   },
   {
     date: "2026/03/08",
@@ -533,12 +537,225 @@ const alstakeLiveData = [
   }
 ];
 
+// マタノシタシティー
+const matanoLiveData = [
+  {
+    date: "2026/02/20",
+    title: "LIVE SQUARE 2nd LINE×Lucky Age pre. 「涙なんて馬鹿みたい」",
+    place: "大阪 福島 LIVE SQUARE 2nd LINE",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "前売り 2500円",
+    band: "マタノシタシティー",
+    pref: "大阪",
+    event_id: "20260220-マタノシタシティー"
+  },
+  {
+    date: "2026/02/28",
+    title: "THE NINTH APOLLO pre ハローミドルグラウンド3",
+    place: "東京 Zepp DiverCity",
+    time: "OPEN 12:15 / START 13:00",
+    ticket: "前売り 5000円",
+    band: "マタノシタシティー",
+    pref: "東京",
+    event_id: "20260228-TETORA_ammo_アルステイク_マタノシタシティー"
+  },
+  {
+    date: "2026/03/03",
+    title: "THE NINTH APOLLO pre PHASEの25周年を祝う \"2000 フェイズと同じ歳の歌い手たち\"",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 17:00 / START 17:30",
+    ticket: "前売り 3025円 / 当日 4025円",
+    band: "マタノシタシティー",
+    pref: "東京",
+    event_id: "20260303-アルステイク_マタノシタシティー"
+  },
+  {
+    date: "2026/03/13",
+    title: "人音風土",
+    place: "香川 高松RIZIN'",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "前売り 3000円 / 当日 3500円",
+    band: "マタノシタシティー",
+    pref: "香川",
+    event_id: "20260313-マタノシタシティー"
+  },
+  {
+    date: "2026/03/14",
+    title: "古墳シスターズと春夏秋冬~冬編~",
+    place: "徳島 CLUB GRINDHOUSE",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "前売り 3000円",
+    band: "マタノシタシティー",
+    pref: "徳島",
+    event_id: "20260314-マタノシタシティー"
+  },
+  {
+    date: "2026/03/22",
+    title: "SANUKI ROCK COLOSSEUM 2026",
+    place: "香川 高松6会場",
+    time: "OPEN 11:00 / START 11:30（予定）",
+    ticket: "1日券 5800円 / 2日通し券 10500円",
+    band: "マタノシタシティー",
+    pref: "香川",
+    event_id: "20260322-マタノシタシティー"
+  }
+];
+
+// 東京、君がいない街
+const tokikimiLiveData = [
+  {
+    date: "2026/02/22",
+    title: "MEMETOOUR THE WORLD FESTIVAL 2026",
+    place: "東京 新宿3会場",
+    time: "START 15:30",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260222-東京、君がいない街"
+  },
+  {
+    date: "2026/02/25",
+    title: "middle scene pre. 『本音を重ねて』",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260225-東京、君がいない街"
+  },
+  {
+    date: "2026/02/26",
+    title: "-Dripdays, \"Transient Tour 2025-2026\"- / Mighty Cats Digital Single「優しさに包まれて」Release Tour ''弛みない足跡''",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 17:00 / START 18:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260226-東京、君がいない街"
+  },
+  {
+    date: "2026/03/01",
+    title: "睨んで疑ってツアー 初日 CLUB PHASE 25th 1st DAY",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 17:15 / START 18:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260301-TETORA_東京、君がいない街"
+  },
+  {
+    date: "2026/03/06",
+    title: "東京、君がいない街 睨んで疑ってツアー",
+    place: "福岡 LIVE HOUSE OP's",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "福岡",
+    event_id: "20260306-東京、君がいない街"
+  },
+  {
+    date: "2026/03/08",
+    title: "TENJIN ONTAQ 2026",
+    place: "福岡 天神8会場",
+    time: "OPEN 11:30 / START 12:30",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "福岡",
+    event_id: "20260308-東京、君がいない街"
+  },
+  {
+    date: "2026/03/12",
+    title: "『BEATNUTS』 -CLUB PHASE25thAnniversary!!-",
+    place: "東京 高田馬場CLUB PHASE",
+    time: "OPEN 17:30 / START 18:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260312-東京、君がいない街"
+  },
+  {
+    date: "2026/03/14",
+    title: "見放題東京2026",
+    place: "東京 新宿12会場",
+    time: "OPEN 11:30 / START 12:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260314-東京、君がいない街"
+  },
+  {
+    date: "2026/03/20",
+    title: "NTTドコモ presents RADIO BERRY haruberrylive “CIRCUIT”2026",
+    place: "栃木 宇都宮市内3会場",
+    time: "OPEN 12:30 / START 13:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "栃木",
+    event_id: "20260320-東京、君がいない街"
+  },
+  {
+    date: "2026/03/21",
+    title: "THE NINTH APOLLO pre ennの25周年を祝うサーキット",
+    place: "宮城 仙台enn 2nd & 3rd",
+    time: "OPEN 13:15 / START 14:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "宮城",
+    event_id: "20260321-ammo_アルステイク_東京、君がいない街"
+  },
+  {
+    date: "2026/03/23",
+    title: "VINTAGE pre. -VINTAGE 42th Anniv.- 『 HYPER BIG DAY TRIP 』",
+    place: "大阪 寝屋川VINTAGE",
+    time: "",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "大阪",
+    event_id: "20260323-東京、君がいない街"
+  },
+  {
+    date: "2026/03/30",
+    title: "「夜と同時に、動き出す。」pre 「世田谷アンダーグラウンド」",
+    place: "東京 下北沢MOSAiC",
+    time: "OPEN 13:30 / START 14:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260330-東京、君がいない街"
+  },
+  {
+    date: "2026/04/02",
+    title: "荒野を歩け",
+    place: "東京 渋谷Spotify O-Crest",
+    time: "OPEN 18:00 / START 18:30",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "東京",
+    event_id: "20260402-東京、君がいない街"
+  },
+  {
+    date: "2026/04/18",
+    title: "FM NORTH WAVE & WESS PRESENTS IMPACT! XXIII",
+    place: "北海道 札幌5会場",
+    time: "START 11:00",
+    ticket: "",
+    band: "東京、君がいない街",
+    pref: "北海道",
+    event_id: "20260418-東京、君がいない街"
+  }
+];
 
 
 // ------------------------------
 // 全バンドまとめて日付順にソート
 // ------------------------------
-const allLiveData = [...liveData, ...ammoLiveData, ...alstakeLiveData];
+const allLiveData = [
+  ...liveData,
+  ...ammoLiveData,
+  ...alstakeLiveData,
+  ...matanoLiveData,
+  ...tokikimiLiveData
+];
 
 allLiveData.sort((a, b) => new Date(a.date) - new Date(b.date));
 
