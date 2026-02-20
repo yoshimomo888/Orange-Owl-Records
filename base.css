@@ -25,6 +25,15 @@ body {
   /* ← これが消えてる！ */
 }
 
+.logo-hint {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 6px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  padding-bottom: 10px;
+}
+
 /* ★ 横スクロールをやめて縦並びにする */
 .logo-area .bands {
   display: block;
@@ -52,7 +61,7 @@ body {
 /* 既存の小さいロゴはそのまま */
 .band-logo[data-band="マタノシタシティー"] img,
 .band-logo[data-band="東京、君がいない街"] img {
-  height: 22px;
+  height: 20px;
 }
 
 /* 押したときの反応 */
