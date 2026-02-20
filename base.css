@@ -6,7 +6,7 @@ body {
 
 /* ロゴエリア全体 */
 .logo-area {
-  padding: 40px 0 20px;
+  padding-top: 40px;
   text-align: center;
   background: #fff;
   max-width: 100%;
@@ -28,24 +28,23 @@ body {
 /* ★ 横スクロールをやめて縦並びにする */
 .logo-area .bands {
   display: block;
-  padding: 20px 0;
 }
 
 /* ★ ロゴ1つ1つを押しやすくする（タップ領域UP） */
 .band-logo {
-  height: 60px;
-  /* ← ロゴは40pxのまま、当たり判定だけ広げる */
+  height: 50px;
+  /* ← 押しやすさキープしつつスッキリ */
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 12px 0;
-  /* ← 縦の呼吸 */
+  margin: 8px 0;
+  /* ← 間延びしない絶妙ライン */
   transition: opacity 0.2s, transform 0.1s;
 }
 
 .band-logo img {
   height: 40px;
-  /* ← 今のまま */
+  /* ← ロゴの大きさはそのまま */
   width: auto;
   object-fit: contain;
 }
