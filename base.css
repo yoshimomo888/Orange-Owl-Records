@@ -6,7 +6,7 @@ body {
 
 /* ロゴエリア全体 */
 .logo-area {
-  padding-top: 40px;
+  padding-top: 10px;
   text-align: center;
   background: #fff;
   max-width: 100%;
@@ -14,7 +14,7 @@ body {
 
 /* 事務所ロゴ（中央） */
 .logo-area .agency img {
-  width: 140px;
+  width: 120px;
 }
 
 .agency {
@@ -32,7 +32,7 @@ body {
 
 /* ★ ロゴ1つ1つを押しやすくする（タップ領域UP） */
 .band-logo {
-  height: 50px;
+  height: 45px;
   /* ← 押しやすさキープしつつスッキリ */
   display: flex;
   align-items: center;
