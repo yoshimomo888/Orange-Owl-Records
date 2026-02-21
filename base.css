@@ -1,4 +1,3 @@
-
 body {
   font-family: "LINE Seed JP", sans-serif;
   overflow-x: hidden;
@@ -22,7 +21,6 @@ body {
   max-width: 100%;
   overflow: visible;
   text-align: center;
-  /* ← これが消えてる！ */
 }
 
 .logo-hint {
@@ -42,18 +40,15 @@ body {
 /* ★ ロゴ1つ1つを押しやすくする（タップ領域UP） */
 .band-logo {
   height: 45px;
-  /* ← 押しやすさキープしつつスッキリ */
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 8px 0;
-  /* ← 間延びしない絶妙ライン */
   transition: opacity 0.2s, transform 0.1s;
 }
 
 .band-logo img {
   height: 40px;
-  /* ← ロゴの大きさはそのまま */
   width: auto;
   object-fit: contain;
 }
@@ -88,7 +83,15 @@ body {
   margin-bottom: 16px;
 }
 
-/* 検索ボックス */
+/* ------------------------------ */
+/* ★ 正しい検索欄の CSS（完全復元） */
+/* ------------------------------ */
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
 .search-box input[type="search"] {
   width: 100%;
   padding: 12px 14px;
@@ -96,11 +99,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 100px;
   outline: none;
-}
-
-.search-box {
-  position: relative;
-  width: 100%;
+  background: #fff;
 }
 
 .search-icon {
@@ -135,14 +134,13 @@ body {
   }
 }
 
-
 /* サジェスト（予測変換） */
 .suggest-list {
   margin-top: 8px;
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 6px;
-  display: none; /* JSで表示切り替え */
+  display: none;
 }
 
 .suggest-list div {
@@ -160,7 +158,6 @@ body {
   margin-top: 16px;
   display: flex;
   flex-wrap: wrap;
-  /* ← これが超重要 */
   gap: 10px;
 }
 
@@ -179,9 +176,7 @@ body {
 
 .live-list {
   display: block;
-  /* flex をやめる */
 }
-
 
 /* ライブカードの外枠 */
 .live-card {
@@ -408,4 +403,32 @@ body {
 main {
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* to topぼたん */
+
+#to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+  /* ← 最初は非表示 */
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 999;
+}
+
+#to-top:hover {
+  opacity: 1;
+  transform: scale(1.05);
 }

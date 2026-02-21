@@ -39,7 +39,7 @@ const liveData = [
     ticket: "前売り 3500円",
     band: "TETORA",
     pref: "東京",
-    event_id: "20260301-TETORA"
+    event_id: "20260301-TETORA_東京、君がいない街"
   },
   {
     date: "2026/03/08",
@@ -225,7 +225,7 @@ const ammoLiveData = [
     ticket: "前売り 4500円 +1Drink",
     band: "ammo",
     pref: "宮城",
-    event_id: "20260321-ammo_アルステイク"
+    event_id: "20260321-ammo_アルステイク_東京君がいない街"
   },
   {
     date: "2026/04/03",
@@ -313,7 +313,7 @@ const alstakeLiveData = [
     ticket: "1日券 ¥6,000 / 2日通し券 ¥11,000",
     band: "アルステイク",
     pref: "福岡",
-    event_id: "20260308-アルステイク"
+    event_id: "20260308-アルステイク_東京君がいない街"
   },
   {
     date: "2026/03/09",
@@ -333,7 +333,7 @@ const alstakeLiveData = [
     ticket: "ADV ¥5,500 +1Drink",
     band: "アルステイク",
     pref: "東京",
-    event_id: "20260314-アルステイク"
+    event_id: "20260314-アルステイク_東京君がいない街"
   },
   {
     date: "2026/03/16",
@@ -363,7 +363,7 @@ const alstakeLiveData = [
     ticket: "ADV ¥4,500 +1Drink",
     band: "アルステイク",
     pref: "宮城",
-    event_id: "20260321-ammo_アルステイク"
+    event_id: "20260321-ammo_アルステイク_東京君がいない街"
   },
   {
     date: "2026/03/22",
@@ -601,7 +601,7 @@ const tokikimiLiveData = [
     ticket: "",
     band: "東京、君がいない街",
     pref: "福岡",
-    event_id: "20260308-東京、君がいない街"
+    event_id: "20260308-アルステイク_東京君がいない街"
   },
   {
     date: "2026/03/12",
@@ -621,7 +621,7 @@ const tokikimiLiveData = [
     ticket: "",
     band: "東京、君がいない街",
     pref: "東京",
-    event_id: "20260314-東京、君がいない街"
+    event_id: "20260314-アルステイク_東京君がいない街"
   },
   {
     date: "2026/03/20",

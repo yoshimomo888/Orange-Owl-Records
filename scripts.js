@@ -1,11 +1,3 @@
-
-// ------------------------------
-// データ本体
-// ------------------------------
-
-
-
-
 // ------------------------------
 // 全バンドまとめて日付順にソート
 // ------------------------------
@@ -58,7 +50,7 @@ function formatDate(dateStr) {
 
 
 // ------------------------------
-// ★ event_id ごとにライブをまとめる
+// event_id ごとにライブをまとめる
 // ------------------------------
 function groupLivesByEvent(lives) {
   const grouped = {};
@@ -81,11 +73,9 @@ function groupLivesByEvent(lives) {
 
 
 // ------------------------------
-// ★ カード生成（複数バンド＋リンク対応）
+// カード生成
 // ------------------------------
 function createLiveCard(item) {
-
-  // バンド名をリンク付きで生成
   const bandLinks = item.bands
     .map(band => {
       const url = bandUrl[band] || "#";
@@ -110,9 +100,7 @@ function createLiveCard(item) {
       </div>
 
       <div class="live-body">
-        <p class="band">
-          ${bandLinks}
-        </p>
+        <p class="band">${bandLinks}</p>
         <p class="title">${item.title}</p>
         <p class="place">${item.place}</p>
         <p class="time">${item.time}</p>
@@ -123,7 +111,7 @@ function createLiveCard(item) {
 
 
 // ------------------------------
-// ★ カード描画（まとめ後のデータを描画）
+// カード描画
 // ------------------------------
 function renderCards(data) {
   const list = document.querySelector(".live-list");
@@ -168,7 +156,6 @@ function hiraToKana(str) {
   );
 }
 
-// バンド名リスト（必要なら scripts.js から持ってきてもOK）
 // バンド名 + 読み
 const bandNames = [
   { name: "TETORA", yomi: "てとら" },
@@ -178,17 +165,14 @@ const bandNames = [
   { name: "東京、君がいない街", yomi: "とうきょうきみがいないまち" }
 ];
 
-
 function showSuggest(keyword) {
   if (!keyword) {
     suggestList.style.display = "none";
     return;
   }
 
-  // 入力をカタカナ化
   const kanaKeyword = hiraToKana(keyword.toLowerCase());
 
-  // 都道府県の候補
   const prefMatched = prefectures
     .filter(p =>
       hiraToKana(p.name).toLowerCase().includes(kanaKeyword) ||
@@ -196,15 +180,13 @@ function showSuggest(keyword) {
     )
     .map(p => p.name);
 
-  // バンド名の候補
-const bandMatched = bandNames
-  .filter(b =>
-    hiraToKana(b.name).toLowerCase().includes(kanaKeyword) ||
-    hiraToKana(b.yomi).toLowerCase().includes(kanaKeyword)
-  )
-  .map(b => b.name);
+  const bandMatched = bandNames
+    .filter(b =>
+      hiraToKana(b.name).toLowerCase().includes(kanaKeyword) ||
+      hiraToKana(b.yomi).toLowerCase().includes(kanaKeyword)
+    )
+    .map(b => b.name);
 
-  // 合体
   const matched = [...prefMatched, ...bandMatched];
 
   if (matched.length === 0) {
@@ -219,7 +201,7 @@ const bandMatched = bandNames
   suggestList.style.display = "block";
 }
 
-// サジェストクリック時の動作
+// サジェストクリック時：検索欄に入れて検索＋閉じる
 suggestList.addEventListener("click", (e) => {
   if (e.target.classList.contains("suggest-item")) {
     searchInput.value = e.target.textContent;
@@ -228,12 +210,13 @@ suggestList.addEventListener("click", (e) => {
   }
 });
 
+
 // ------------------------------
 // 検索
 // ------------------------------
 const searchInput = document.getElementById("search-input");
 
-// ★ 追加：検索欄の内容が確定したらサジェストを閉じる
+// 入力確定でサジェスト閉じる
 searchInput.addEventListener("change", () => {
   suggestList.style.display = "none";
 });
@@ -258,8 +241,9 @@ searchInput.addEventListener("input", () => {
   renderCards(filtered);
 });
 
+
 // ------------------------------
-// ロゴ・チップ・地域ボタン
+// ロゴ・チップ・agency
 // ------------------------------
 
 // ロゴ（バンドロゴ）
@@ -273,12 +257,12 @@ document.querySelectorAll(".band-logo").forEach(logo => {
     // 検索実行
     searchInput.dispatchEvent(new Event("input"));
 
-    // ★ サジェスト閉じる
+    // サジェスト閉じる
     searchInput.dispatchEvent(new Event("change"));
 
     // flash アニメーション
-    searchInput.classList.add('flash');
-    setTimeout(() => searchInput.classList.remove('flash'), 400);
+    searchInput.classList.add("flash");
+    setTimeout(() => searchInput.classList.remove("flash"), 400);
   });
 });
 
@@ -287,7 +271,7 @@ document.querySelector(".agency").addEventListener("click", () => {
   searchInput.value = "";
   renderCards(allLiveData);
 
-  // ★ サジェスト閉じる
+  // サジェスト閉じる
   searchInput.dispatchEvent(new Event("change"));
 });
 
@@ -299,28 +283,30 @@ document.querySelectorAll(".chip").forEach(chip => {
     // 検索実行
     searchInput.dispatchEvent(new Event("input"));
 
-    // ★ サジェスト閉じる
+    // サジェスト閉じる
     searchInput.dispatchEvent(new Event("change"));
   });
 });
 
-// ------------------------------
-// 東京・大阪・福岡ボタン
-// ------------------------------
-document.getElementById("tokyo-btn").addEventListener("click", () => {
-  searchInput.value = "東京";
-  searchInput.dispatchEvent(new Event("input"));
-  searchInput.dispatchEvent(new Event("change")); // ★ サジェスト閉じる
-});
 
-document.getElementById("osaka-btn").addEventListener("click", () => {
-  searchInput.value = "大阪";
-  searchInput.dispatchEvent(new Event("input"));
-  searchInput.dispatchEvent(new Event("change"));
-});
+// ------------------------------
+// to top ボタン
+// ------------------------------
+const toTopBtn = document.getElementById("to-top");
 
-document.getElementById("fukuoka-btn").addEventListener("click", () => {
-  searchInput.value = "福岡";
-  searchInput.dispatchEvent(new Event("input"));
-  searchInput.dispatchEvent(new Event("change"));
-});
+if (toTopBtn) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+      toTopBtn.style.display = "flex";
+    } else {
+      toTopBtn.style.display = "none";
+    }
+  });
+
+  toTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
