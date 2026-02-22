@@ -166,6 +166,8 @@ const bandNames = [
 ];
 
 function showSuggest(keyword) {
+  keyword = keyword.trim();   // ← これ追加
+
   if (!keyword) {
     suggestList.style.display = "none";
     return;
