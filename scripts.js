@@ -62,6 +62,7 @@ function groupLivesByEvent(lives) {
         title: live.title,
         place: live.place,
         time: live.time,
+        pref: live.pref, 
         bands: []
       };
     }
