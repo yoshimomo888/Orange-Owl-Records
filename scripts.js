@@ -166,7 +166,7 @@ const bandNames = [
 ];
 
 function showSuggest(keyword) {
-  keyword = keyword.trim();   // ← これ追加
+  keyword = keyword.trim();
 
   if (!keyword) {
     suggestList.style.display = "none";
@@ -203,7 +203,7 @@ function showSuggest(keyword) {
   suggestList.style.display = "block";
 }
 
-// サジェストクリック時：検索欄に入れて検索＋閉じる
+// サジェストクリック
 suggestList.addEventListener("click", (e) => {
   if (e.target.classList.contains("suggest-item")) {
     searchInput.value = e.target.textContent;
@@ -214,16 +214,32 @@ suggestList.addEventListener("click", (e) => {
 
 
 // ------------------------------
-// 検索
+// 検索（未確定文字対策 完全版）
 // ------------------------------
 const searchInput = document.getElementById("search-input");
+
+let composing = false;
+
+// IME 入力開始（未確定）
+searchInput.addEventListener("compositionstart", () => {
+  composing = true;
+});
+
+// IME 入力確定
+searchInput.addEventListener("compositionend", () => {
+  composing = false;
+  searchInput.dispatchEvent(new Event("input")); // ← 確定後に検索実行
+});
 
 // 入力確定でサジェスト閉じる
 searchInput.addEventListener("change", () => {
   suggestList.style.display = "none";
 });
 
+// 入力イベント
 searchInput.addEventListener("input", () => {
+  if (composing) return; // ← 未確定文字は完全に無視
+
   const keyword = searchInput.value.trim().toLowerCase();
 
   showSuggest(keyword);
@@ -247,45 +263,29 @@ searchInput.addEventListener("input", () => {
 // ------------------------------
 // ロゴ・チップ・agency
 // ------------------------------
-
-// ロゴ（バンドロゴ）
 document.querySelectorAll(".band-logo").forEach(logo => {
   logo.addEventListener("click", () => {
     const band = logo.dataset.band;
 
-    // 検索欄に入れる
     searchInput.value = band;
-
-    // 検索実行
     searchInput.dispatchEvent(new Event("input"));
-
-    // サジェスト閉じる
     searchInput.dispatchEvent(new Event("change"));
 
-    // flash アニメーション
     searchInput.classList.add("flash");
     setTimeout(() => searchInput.classList.remove("flash"), 400);
   });
 });
 
-// agency（ロゴ上の全件表示ボタン）
 document.querySelector(".agency").addEventListener("click", () => {
   searchInput.value = "";
   renderCards(allLiveData);
-
-  // サジェスト閉じる
   searchInput.dispatchEvent(new Event("change"));
 });
 
-// チップ（地域チップ）
 document.querySelectorAll(".chip").forEach(chip => {
   chip.addEventListener("click", () => {
     searchInput.value = chip.textContent;
-
-    // 検索実行
     searchInput.dispatchEvent(new Event("input"));
-
-    // サジェスト閉じる
     searchInput.dispatchEvent(new Event("change"));
   });
 });
