@@ -102,7 +102,7 @@ function createLiveCard(item) {
       <div class="live-body">
         <p class="band">${bandLinks}</p>
         <p class="title">${item.title}</p>
-        <p class="place">${item.place}</p>
+        <p class="place">${item.pref} | ${item.place}</p>
         <p class="time">${item.time}</p>
       </div>
     </div>
