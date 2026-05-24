@@ -239,27 +239,30 @@ searchInput.addEventListener("change", () => {
 
 // 入力イベント
 searchInput.addEventListener("input", () => {
-  if (composing) return; // ← 未確定文字は完全に無視
+  if (composing) return;
 
   const keyword = searchInput.value.trim().toLowerCase();
 
   showSuggest(keyword);
 
   const filtered = allLiveData.filter(item => {
-    const matchBand = item.band.toLowerCase().includes(keyword);
-    const matchPlace = item.place.toLowerCase().includes(keyword);
-    const matchTitle = item.title.toLowerCase().includes(keyword);
+    const isPref = prefectures.some(p =>
+      p.name === keyword || p.yomi === keyword
+    );
+
+    const matchBand = isPref ? false : item.band.toLowerCase().includes(keyword);
+    const matchPlace = isPref ? false : item.place.toLowerCase().includes(keyword);
+    const matchTitle = isPref ? false : item.title.toLowerCase().includes(keyword);
 
     const matchPref =
-  item.pref === keyword ||
-  prefectures.some(p => p.name === item.pref && p.yomi.includes(keyword));
+      item.pref === keyword ||
+      prefectures.some(p => p.name === item.pref && p.yomi.includes(keyword));
 
     return matchBand || matchPlace || matchTitle || matchPref;
   });
 
   renderCards(filtered);
 });
-
 
 // ------------------------------
 // ロゴ・チップ・agency
