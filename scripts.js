@@ -251,8 +251,8 @@ searchInput.addEventListener("input", () => {
     const matchTitle = item.title.toLowerCase().includes(keyword);
 
     const matchPref =
-      item.pref.includes(keyword) ||
-      prefectures.some(p => p.name === item.pref && p.yomi.includes(keyword));
+  item.pref === keyword ||
+  prefectures.some(p => p.name === item.pref && p.yomi.includes(keyword));
 
     return matchBand || matchPlace || matchTitle || matchPref;
   });
